@@ -1,0 +1,10 @@
+[core]
+	editor = code -w
+	excludesfile = ~/.gitignore
+[rerere]
+	enabled = true
+[push]
+	default = simple
+[rebase]
+	autosquash = true
+	autostash = true

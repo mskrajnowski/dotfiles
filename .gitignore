@@ -1,0 +1,6 @@
+# sublime project files
+*.sublime-project
+*.sublime-workspace
+
+# vs code
+.vscode
