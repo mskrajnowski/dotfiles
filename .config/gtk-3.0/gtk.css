@@ -1,0 +1,8 @@
+.header-bar.default-decoration {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.header-bar.default-decoration .button.titlebutton {
+  padding: 0px;
+}
