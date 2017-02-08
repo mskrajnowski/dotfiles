@@ -1,7 +1,7 @@
 # virtualenvwrapper
 export VIRTUAL_ENV_DISABLE_PROMPT=true
-# export WORKON_HOME=$HOME/.virtualenvs
-# export PROJECT_HOME=$HOME/Devel
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/projects
 # source /usr/local/bin/virtualenvwrapper.sh
 
 # Path to your oh-my-zsh installation.
