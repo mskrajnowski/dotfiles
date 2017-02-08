@@ -1,0 +1,30 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.fontFamily": "'Source Code Pro'",
+    "editor.rulers": [
+        70,
+        79
+    ],
+    "editor.renderIndentGuides": true,
+    "window.restoreFullscreen": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/*.pyc": true,
+        "**/__pycache__": true,
+        "**/.subl": true,
+        "**/.vscode": true
+    },
+    "window.openFilesInNewWindow": "off",
+    "window.openFoldersInNewWindow": "on",
+    "workbench.editor.tabCloseButton": "off",
+    "files.insertFinalNewline": true,
+    "editor.renderLineHighlight": "all",
+    "gitlens.blame.annotation.style": "compact",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.showTabs": false,
+    "window.menuBarVisibility": "hidden"
+}

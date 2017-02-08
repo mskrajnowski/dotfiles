@@ -1,0 +1,17 @@
+EditorConfig.EditorConfig
+HookyQR.beautify
+PKief.material-icon-theme
+acarreiro.calculate
+be5invis.vscode-icontheme-nomo-dark
+bibhasdn.git-easy
+dbaeumer.vscode-eslint
+donjayamanne.githistory
+donjayamanne.python
+eg2.tslint
+emmanuelbeziat.vscode-great-icons
+joelday.docthis
+johnpapa.Angular1
+kumar-harsh.graphql-for-vscode
+msjsdiag.debugger-for-chrome
+robinbentley.sass-indented
+sysoev.vscode-open-in-github
