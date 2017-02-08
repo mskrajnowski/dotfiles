@@ -1,0 +1,30 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  handle_size = 1
+  suppress_multiple_term_dialog = True
+[keybindings]
+  broadcast_all = None
+  broadcast_group = <Primary>a
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    use_system_font = False
+    font = Source Code Pro Medium 10
+    exit_action = hold
+    background_darkness = 0.82
+    background_image = None
+    foreground_color = "#d3d0c8"
+    show_titlebar = False
+    copy_on_selection = True
+    background_color = "#222222"
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
