@@ -1,6 +1,7 @@
 EditorConfig.EditorConfig
 HookyQR.beautify
 PKief.material-icon-theme
+PeterJausovec.vscode-docker
 acarreiro.calculate
 be5invis.vscode-icontheme-nomo-dark
 bibhasdn.git-easy
@@ -9,6 +10,7 @@ donjayamanne.githistory
 donjayamanne.python
 eg2.tslint
 emmanuelbeziat.vscode-great-icons
+haaaad.ansible
 joelday.docthis
 johnpapa.Angular1
 kumar-harsh.graphql-for-vscode

@@ -15,7 +15,9 @@
         "**/*.pyc": true,
         "**/__pycache__": true,
         "**/.subl": true,
-        "**/.vscode": true
+        "**/.vscode": true,
+        "**/node_modules": true,
+        "**/bower_components": true
     },
     "window.openFilesInNewWindow": "off",
     "window.openFoldersInNewWindow": "on",
