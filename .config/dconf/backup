@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo '#!/usr/bin/env sh' > restore
+echo >> restore
+chmod +x restore
+
+function backup_key {
+    schema=$1
+    key=$2
+
+    value=$(gsettings get $schema $key || echo "''")
+    default=$(XDG_CONFIG_HOME=/none gsettings get $schema $key || echo "''")
+
+    if [ "$value" != "$default" ]; then
+        echo "gsettings set $schema $key \"$value\"" >> restore
+    fi
+}
+
+cat backed_keys.txt | while read -r line; do
+    backup_key $line
+done
