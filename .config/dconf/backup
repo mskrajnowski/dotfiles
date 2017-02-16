@@ -2,9 +2,11 @@
 
 set -e
 
-echo '#!/usr/bin/env sh' > restore
-echo >> restore
-chmod +x restore
+restore_path="$HOME/.config/dconf/restore"
+
+echo '#!/usr/bin/env sh' > "$restore_path"
+echo >> "$restore_path"
+chmod +x "$restore_path"
 
 function backup_key {
     schema=$1
@@ -14,10 +16,10 @@ function backup_key {
     default=$(XDG_CONFIG_HOME=/none gsettings get $schema $key || echo "''")
 
     if [ "$value" != "$default" ]; then
-        echo "gsettings set $schema $key \"$value\"" >> restore
+        echo "gsettings set $schema $key \"$value\"" >> "$restore_path"
     fi
 }
 
-cat backed_keys.txt | while read -r line; do
+cat backed_keys.txt | sort | while read -r line; do
     backup_key $line
 done
