@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -e
+
+restore_path="$HOME/.config/Code/User/restore"
+
+echo '#!/usr/bin/env sh' > "$restore_path"
+echo >> "$restore_path"
+chmod +x "$restore_path"
+
+code --list-extensions | sort | while read -r extension; do
+    echo "code --install-extension \"$extension\"" >> "$restore_path"
+done
