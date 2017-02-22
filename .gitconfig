@@ -8,3 +8,6 @@
 [rebase]
 	autosquash = true
 	autostash = true
+[user]
+	name = Marek Skrajnowski
+	email = mskrajnowski@users.noreply.github.com
