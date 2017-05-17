@@ -30,7 +30,7 @@
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.showTabs": true,
-    "window.menuBarVisibility": "hidden",
+    "window.menuBarVisibility": "toggle",
     "window.zoomLevel": 0,
     "editor.minimap.enabled": true,
     "editor.minimap.renderCharacters": false,
