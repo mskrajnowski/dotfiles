@@ -20,7 +20,8 @@
         "**/.subl": true,
         "**/.vscode": true,
         "**/node_modules": true,
-        "**/bower_components": true
+        "**/bower_components": true,
+        "**/.sass-cache": true
     },
     "window.openFilesInNewWindow": "off",
     "window.openFoldersInNewWindow": "on",
