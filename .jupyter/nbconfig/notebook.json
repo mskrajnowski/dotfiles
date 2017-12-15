@@ -7,6 +7,18 @@
       "lineNumbers": true
     }
   }, 
+  "load_extensions": {
+    "splitcell/splitcell": false, 
+    "collapsible_headings/main": true, 
+    "toc2/main": true, 
+    "nbextensions_configurator/config_menu/main": true, 
+    "toggle_all_line_numbers/main": false, 
+    "codefolding/main": true, 
+    "select_keymap/main": true, 
+    "limit_output/main": true, 
+    "comment-uncomment/main": false, 
+    "contrib_nbextensions_help_item/main": true
+  }, 
   "Notebook": {
     "Header": true, 
     "Toolbar": false
