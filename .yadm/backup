@@ -1,0 +1,5 @@
+#!/bin/sh
+
+$HOME/.yadm/vscode/backup
+$HOME/.yadm/tilix/backup
+$HOME/.yadm/dconf/backup
