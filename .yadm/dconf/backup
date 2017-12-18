@@ -20,6 +20,6 @@ function backup_key {
     fi
 }
 
-cat backed_keys.txt | sort | while read -r line; do
+cat "$HOME/.yadm/dconf/backed_keys.txt" | sort | while read -r line; do
     backup_key $line
 done
