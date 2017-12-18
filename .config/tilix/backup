@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-dconf dump /com/gexperts/Tilix/ > ~/.config/tilix/tilix.dconf.ini

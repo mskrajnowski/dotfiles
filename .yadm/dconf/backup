@@ -2,7 +2,7 @@
 
 set -e
 
-restore_path="$HOME/.config/dconf/restore"
+restore_path="$HOME/.yadm/dconf/restore"
 
 echo '#!/usr/bin/env sh' > "$restore_path"
 echo >> "$restore_path"

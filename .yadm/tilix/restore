@@ -1,0 +1,3 @@
+#!/bin/sh
+
+dconf load '/com/gexperts/Tilix/' < "$HOME/.config/tilix/tilix.dconf.ini"
