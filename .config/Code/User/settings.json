@@ -51,5 +51,6 @@
         "rtype",
         "params",
         "EMBEDLY"
-    ]
+    ],
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh"
 }
