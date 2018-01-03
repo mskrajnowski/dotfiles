@@ -1,7 +1,4 @@
 {
-  "load_extensions": {
-    "jupyter-js-widgets/extension": true
-  },
   "Cell": {
     "cm_config": {
       "lineNumbers": true
@@ -17,7 +14,8 @@
     "select_keymap/main": true, 
     "limit_output/main": true, 
     "comment-uncomment/main": false, 
-    "contrib_nbextensions_help_item/main": true
+    "contrib_nbextensions_help_item/main": true,
+    "jupyter-js-widgets/extension": true
   }, 
   "Notebook": {
     "Header": true, 
