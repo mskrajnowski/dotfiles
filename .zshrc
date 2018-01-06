@@ -87,3 +87,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 autoload -U zmv
+
+alias docker-compose-run="docker-compose run --rm"
+alias dkc="docker-compose"
+alias dkcr="docker-compose-run"

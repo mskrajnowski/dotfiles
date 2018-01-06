@@ -2,8 +2,8 @@
 {
     "workbench.startupEditor": "none",
     "editor.fontFamily": "'Source Code Pro'",
-    "editor.fontSize": 13,
-    "terminal.integrated.fontSize": 13,
+    "editor.fontSize": 12,
+    "terminal.integrated.fontSize": 12,
     "editor.rulers": [
         70,
         79
@@ -36,21 +36,26 @@
     "window.zoomLevel": 0,
     "editor.minimap.enabled": true,
     "editor.minimap.renderCharacters": false,
-    "workbench.colorTheme": "Ayu Dark",
+    "workbench.colorTheme": "Ayu Mirage",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.editor.revealIfOpen": true,
     "cSpell.userWords": [
+        "EMBEDLY",
+        "arity",
+        "cyclomatic",
         "django",
-        "slugify",
-        "pycache",
-        "minimap",
         "fullscreen",
-        "permalink",
-        "tzinfo",
-        "reindex",
-        "rtype",
+        "minimap",
         "params",
-        "EMBEDLY"
+        "permalink",
+        "pycache",
+        "reindex",
+        "repo",
+        "rtype",
+        "slugify",
+        "tzinfo"
     ],
-    "terminal.integrated.shell.osx": "/usr/local/bin/zsh"
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false
 }
