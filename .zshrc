@@ -115,3 +115,16 @@ alias dkcr="docker-compose-run"
 function random-string {
     openssl rand -base64 1024 | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1
 }
+
+if uname -r | grep -Fq "Microsoft"; then
+    # ssh-agent configuration
+    if [ -z "$(pgrep ssh-agent)" ]; then
+        eval $(ssh-agent -s) > /dev/null
+    else
+        export SSH_AGENT_PID=$(pgrep ssh-agent)
+        export SSH_AUTH_SOCK=$(ls /tmp/ssh-*/agent.*)
+    fi
+
+    ssh-add 2>/dev/null
+fi
+
