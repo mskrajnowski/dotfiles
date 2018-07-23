@@ -51,7 +51,28 @@ ZSH_THEME="mskrajnowski"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-hubflow virtualenv virtualenvwrapper django python pip bower postgres npm node debian)
+plugins=(
+    aws
+    bundler
+    debian
+    docker
+    docker-compose
+    dotenv
+    gem
+    git 
+    git-hubflow 
+    httpie
+    node 
+    npm 
+    osx
+    pip 
+    postgres 
+    pyenv
+    python 
+    virtualenv 
+    virtualenvwrapper 
+    yarn
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,3 +112,6 @@ autoload -U zmv
 alias docker-compose-run="docker-compose run --rm"
 alias dkc="docker-compose"
 alias dkcr="docker-compose-run"
+function random-string {
+    openssl rand -base64 1024 | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1
+}
