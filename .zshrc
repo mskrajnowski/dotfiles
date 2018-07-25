@@ -116,6 +116,18 @@ function random-string {
     openssl rand -base64 1024 | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1
 }
 
+function uuid3 {
+    python -c "import uuid; print(uuid.uuid3(uuid.UUID('$1'), '$2'))"
+}
+
+function uuid4 {
+    python -c "import uuid; print(uuid.uuid4())"
+}
+
+function uuid5 {
+    python -c "import uuid; print(uuid.uuid5(uuid.UUID('$1'), '$2'))"
+}
+
 if uname -r | grep -Fq "Microsoft"; then
     # ssh-agent configuration
     if [ -z "$(pgrep ssh-agent)" ]; then
@@ -127,4 +139,3 @@ if uname -r | grep -Fq "Microsoft"; then
 
     ssh-add 2>/dev/null
 fi
-
