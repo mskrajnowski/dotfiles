@@ -8,3 +8,6 @@
 
 # dotenv
 .env
+
+# direnv
+.envrc
