@@ -57,7 +57,6 @@ plugins=(
     debian
     docker
     docker-compose
-    dotenv
     gem
     git 
     git-hubflow 
