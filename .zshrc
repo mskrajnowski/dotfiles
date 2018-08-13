@@ -113,6 +113,11 @@ if which direnv >/dev/null; then
     eval "$(direnv hook zsh)"
 fi
 
+# Load RVM into a shell session as a function
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+    source "$HOME/.rvm/scripts/rvm" 
+fi
+
 alias docker-compose-run="docker-compose run --rm"
 alias dkc="docker-compose"
 alias dkcr="docker-compose-run"
