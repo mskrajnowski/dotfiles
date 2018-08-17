@@ -62,6 +62,10 @@
     "gitlens.keymap": "chorded",
     "go.toolsGopath": "~/.go",
     "java.errors.incompleteClasspath.severity": "ignore",
+    "ruby.lint": {
+        "rubocop": true,
+        "ruby": true
+    },
     "ruby.interpreter.commandPath": "~/.rvm/rubies/ruby-2.3.1/bin/ruby",
     "ruby.pathToBundler": "~/.rvm/rubies/ruby-2.3.1/bin/bundle",
     "ruby.rctComplete.commandPath": "~/.rvm/rubies/ruby-2.3.1/bin/rct-complete",
@@ -74,12 +78,16 @@
     "window.openFoldersInNewWindow": "on",
     "window.restoreFullscreen": true,
     "window.zoomLevel": -1,
-    "workbench.colorTheme": "Ayu Mirage",
+    "workbench.colorTheme": "Visual Studio Dark",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.revealIfOpen": true,
     "workbench.editor.showTabs": true,
     "workbench.editor.tabCloseButton": "off",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "[ruby]": {
+        "editor.formatOnSave": false
+    },
+    "editor.renderWhitespace": "all"
 }
