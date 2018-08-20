@@ -1,15 +1,15 @@
-PATH="$HOME/bin:$PATH"
-PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # python
-PATH="$HOME/.pyenv/bin:$PATH"
-
+export PATH="$HOME/.pyenv/bin:$PATH"
 
 # go
-GOPATH="$HOME/.go"
+export GOPATH="$HOME/.go"
+export PATH="$HOME/.go/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-PATH="$HOME/.rvm/bin:$PATH"
+export PATH="$HOME/.rvm/bin:$PATH"
 
 # Load system specific variables
 if [ -e "$HOME/.zprofile.$(uname -s)" ]; then
@@ -17,6 +17,6 @@ if [ -e "$HOME/.zprofile.$(uname -s)" ]; then
 fi
 
 if uname -r | grep -Fq "Microsoft"; then
-    DISPLAY=localhost:0.0
+    export DISPLAY=localhost:0.0
 fi
 
