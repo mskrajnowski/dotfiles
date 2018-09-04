@@ -10,7 +10,7 @@
 	autostash = true
 [user]
 	name = Marek Skrajnowski
-	email = mskrajnowski@users.noreply.github.com
+	email = marek@codequest.com
 [tig]
 	horizontal-scroll = 10%
 	vertical-split = false
