@@ -57,6 +57,12 @@ source $ZSH/oh-my-zsh.sh
 # https://blog.thecodewhisperer.com/permalink/renaming-magically-with-zmv
 autoload -U zmv
 
+# init pyenv if installed
+if which pyenv >/dev/null; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
 # init RVM if installed
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
     source "$HOME/.rvm/scripts/rvm"
