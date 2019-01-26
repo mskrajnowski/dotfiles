@@ -90,7 +90,11 @@ if uname -r | grep -Fq "Microsoft"; then
     # WSL specific config
     # make sure ssh-agent is running
     if [ -z "$(pgrep ssh-agent)" ]; then
-        eval $(ssh-agent -s) > /dev/null
+        # remove any dangling agent files
+        find /tmp -name 'ssh-*' -delete
+        eval $(ssh-agent -s) >/dev/null
+        # add the main key, so I only need to type the passphrase once
+        ssh-add ~/.ssh/id_rsa
     else
         export SSH_AGENT_PID=$(pgrep ssh-agent)
         export SSH_AUTH_SOCK=$(ls /tmp/ssh-*/agent.*)
