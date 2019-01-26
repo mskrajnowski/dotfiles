@@ -159,6 +159,4 @@ if uname -r | grep -Fq "Microsoft"; then
         export SSH_AGENT_PID=$(pgrep ssh-agent)
         export SSH_AUTH_SOCK=$(ls /tmp/ssh-*/agent.*)
     fi
-
-    ssh-add 2>/dev/null
 fi
