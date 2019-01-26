@@ -97,7 +97,7 @@ if uname -r | grep -Fq "Microsoft"; then
     # make sure ssh-agent is running
     if [ -z "$(pgrep ssh-agent)" ]; then
         # remove any dangling agent files
-        find /tmp -name 'ssh-*' -delete
+        find /tmp -maxdepth 1 -name 'ssh-*' -delete
         eval $(ssh-agent -s) >/dev/null
         # add the main key, so I only need to type the passphrase once
         ssh-add ~/.ssh/id_rsa
