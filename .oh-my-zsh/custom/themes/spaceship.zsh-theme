@@ -1,0 +1,1 @@
+/home/mskrajnowski/.oh-my-zsh/custom/themes/spaceship/spaceship.zsh-theme
