@@ -22,6 +22,7 @@ plugins=(
     command-not-found
     docker
     docker-compose
+    dotenv
     git
     git-hubflow
     gpg-agent
