@@ -19,7 +19,6 @@ SPACESHIP_PROMPT_ORDER=(
 )
 
 plugins=(
-    command-not-found
     docker
     docker-compose
     dotenv
@@ -34,6 +33,7 @@ if uname -s | grep -Fq "Linux"; then
     # Linux specific (including WSL) oh-my-zsh config
     plugins=(
         $plugins
+        command-not-found
         debian
     )
 fi
