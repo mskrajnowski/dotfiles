@@ -19,6 +19,7 @@ fi
 
 if uname -s | grep -Fq "Darwin"; then
     # Mac specific oh-my-zsh variables
+    export PATH="$PATH:/usr/local/opt/node@8/bin"
 fi
 
 if uname -r | grep -Fq "Microsoft"; then
