@@ -58,6 +58,12 @@ source $ZSH/oh-my-zsh.sh
 # https://blog.thecodewhisperer.com/permalink/renaming-magically-with-zmv
 autoload -U zmv
 
+# init pyenv if installed
+if which pyenv >/dev/null; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
 # init RVM if installed
 if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
     source "$HOME/.rvm/scripts/rvm"
@@ -91,7 +97,11 @@ if uname -r | grep -Fq "Microsoft"; then
     # WSL specific config
     # make sure ssh-agent is running
     if [ -z "$(pgrep ssh-agent)" ]; then
-        eval $(ssh-agent -s) > /dev/null
+        # remove any dangling agent files
+        find /tmp -maxdepth 1 -name 'ssh-*' -delete
+        eval $(ssh-agent -s) >/dev/null
+        # add the main key, so I only need to type the passphrase once
+        ssh-add ~/.ssh/id_rsa
     else
         export SSH_AGENT_PID=$(pgrep ssh-agent)
         export SSH_AUTH_SOCK=$(ls /tmp/ssh-*/agent.*)

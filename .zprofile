@@ -26,4 +26,3 @@ if uname -r | grep -Fq "Microsoft"; then
     # WSL specific oh-my-zsh variables
     export DISPLAY=localhost:0.0
 fi
-
