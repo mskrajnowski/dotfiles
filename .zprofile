@@ -5,6 +5,11 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # python
 export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$PATH:$(python -c 'import site; print site.USER_BASE + "/bin"')"
+
+if which python3 >/dev/null; then
+    export PATH="$PATH:$(python3 -c 'import site; print(site.USER_BASE + "/bin")')"
+fi
 
 # go
 export GOPATH="$HOME/.go"
