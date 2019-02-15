@@ -36,6 +36,12 @@ if uname -s | grep -Fq "Linux"; then
         command-not-found
         debian
     )
+
+    # Fix tilix VTE issue
+    # https://github.com/gnunn1/tilix/wiki/VTE-Configuration-Issue
+    if [[ $TILIX_ID ]]; then
+        source /etc/profile.d/vte.sh
+    fi
 fi
 
 if uname -s | grep -Fq "Darwin"; then
