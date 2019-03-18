@@ -75,5 +75,8 @@
   "workbench.editor.tabCloseButton": "off",
   "workbench.startupEditor": "none",
   "editor.renderWhitespace": "all",
-  "editor.suggestSelection": "first"
+  "editor.suggestSelection": "first",
+  "window.titleBarStyle": "custom",
+  "window.newWindowDimensions": "maximized",
+  "breadcrumbs.enabled": true
 }
