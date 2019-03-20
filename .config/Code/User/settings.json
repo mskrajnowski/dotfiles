@@ -28,18 +28,18 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/.DS_Store": true,
-    "**/*.pyc": true,
     "**/__pycache__": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
     "**/.mypy_cache": true,
-    "**/.subl": true,
-    "**/.vscode": true,
-    "**/node_modules": true,
-    "**/bower_components": true,
     "**/.sass-cache": true,
+    "**/.subl": true,
+    "**/.svn": true,
+    "**/.vscode": true,
+    "**/*.pyc": true,
+    "**/bower_components": true,
+    "**/node_modules": true,
     "**/tmp": true,
     "**/vendor": true
   },
@@ -78,7 +78,6 @@
   "window.openFoldersInNewWindow": "on",
   "window.restoreFullscreen": true,
   "window.zoomLevel": -1,
-  "workbench.colorTheme": "Visual Studio Dark",
   "workbench.editor.enablePreview": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.revealIfOpen": true,
@@ -89,5 +88,7 @@
   "[ruby]": {
     "editor.formatOnSave": false
   },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "breadcrumbs.enabled": true,
   "editor.renderWhitespace": "all"
 }
