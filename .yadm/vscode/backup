@@ -8,6 +8,6 @@ echo '#!/usr/bin/env sh' > "$restore_path"
 echo >> "$restore_path"
 chmod +x "$restore_path"
 
-code --list-extensions | sort | while read -r extension; do
+code --list-extensions | sort --ignore-case | while read -r extension; do
     echo "code --install-extension \"$extension\"" >> "$restore_path"
 done
