@@ -74,8 +74,8 @@
   "workbench.editor.tabCloseButton": "off",
   "workbench.startupEditor": "none",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "breadcrumbs.enabled": true,
   "editor.renderWhitespace": "all",
   "window.titleBarStyle": "custom",
-  "window.newWindowDimensions": "maximized"
+  "window.newWindowDimensions": "maximized",
+  "breadcrumbs.enabled": true
 }
