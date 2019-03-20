@@ -1,7 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
   "cSpell.userWords": [
-    "EMBEDLY",
     "arity",
     "cyclomatic",
     "django",
@@ -12,7 +11,6 @@
     "pycache",
     "reindex",
     "repo",
-    "rtype",
     "slugify",
     "tzinfo"
   ],
@@ -44,6 +42,7 @@
     "**/vendor": true
   },
   "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
   "git.confirmSync": false,
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
@@ -57,18 +56,8 @@
     "suppressUpdateNotice": false,
     "suppressWelcomeNotice": true
   },
-  "gitlens.gitExplorer.files.layout": "auto",
-  "gitlens.historyExplorer.enabled": true,
   "gitlens.keymap": "chorded",
   "go.toolsGopath": "~/.go",
-  "java.errors.incompleteClasspath.severity": "ignore",
-  "ruby.lint": {
-    "rubocop": true,
-    "ruby": true
-  },
-  "ruby.interpreter.commandPath": "~/.rvm/rubies/ruby-2.3.1/bin/ruby",
-  "ruby.pathToBundler": "~/.rvm/rubies/ruby-2.3.1/bin/bundle",
-  "ruby.rctComplete.commandPath": "~/.rvm/rubies/ruby-2.3.1/bin/rct-complete",
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "terminal.integrated.fontSize": 13,
@@ -83,12 +72,10 @@
   "workbench.editor.revealIfOpen": true,
   "workbench.editor.showTabs": true,
   "workbench.editor.tabCloseButton": "off",
-  "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
-  "[ruby]": {
-    "editor.formatOnSave": false
-  },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "breadcrumbs.enabled": true,
-  "editor.renderWhitespace": "all"
+  "editor.renderWhitespace": "all",
+  "window.titleBarStyle": "custom",
+  "window.newWindowDimensions": "maximized"
 }
