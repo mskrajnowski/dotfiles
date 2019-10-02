@@ -1,5 +1,6 @@
-// Place your settings in this file to overwrite the default settings
 {
+  "breadcrumbs.enabled": true,
+  "cSpell.language": "en,pl",
   "cSpell.userWords": [
     "arity",
     "cyclomatic",
@@ -14,7 +15,7 @@
     "slugify",
     "tzinfo"
   ],
-  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.ignoreTrimWhitespace": false,
   "editor.fontFamily": "'Source Code Pro'",
   "editor.fontSize": 13,
   "editor.formatOnSave": true,
@@ -22,11 +23,19 @@
   "editor.minimap.renderCharacters": false,
   "editor.renderIndentGuides": true,
   "editor.renderLineHighlight": "all",
+  "editor.renderWhitespace": "all",
   "editor.rulers": [70, 79],
+  "editor.suggestSelection": "first",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.exclude": {
-    "**/__pycache__": true,
+    "**/*.pyc": true,
     "**/.DS_Store": true,
     "**/.git": true,
     "**/.hg": true,
@@ -35,7 +44,7 @@
     "**/.subl": true,
     "**/.svn": true,
     "**/.vscode": true,
-    "**/*.pyc": true,
+    "**/__pycache__": true,
     "**/bower_components": true,
     "**/node_modules": true,
     "**/tmp": true,
@@ -57,15 +66,31 @@
     "suppressWelcomeNotice": true
   },
   "gitlens.keymap": "chorded",
+  "go.formatTool": "goimports",
   "go.toolsGopath": "~/.go",
+  "go.useLanguageServer": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+  "terraform.indexing": {
+    "delay": 500,
+    "enabled": false,
+    "exclude": [".terraform/**/*", "**/.terraform/**/*"],
+    "liveIndexing": false
+  },
+  "terraform.languageServer": {
+    "args": [],
+    "enabled": false
+  },
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "vsintellicode.modify.editor.suggestSelection": "disabled",
+  "window.newWindowDimensions": "maximized",
   "window.openFilesInNewWindow": "off",
   "window.openFoldersInNewWindow": "on",
   "window.restoreFullscreen": true,
+  "window.titleBarStyle": "custom",
   "window.zoomLevel": -1,
   "workbench.editor.enablePreview": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -73,18 +98,25 @@
   "workbench.editor.showTabs": true,
   "workbench.editor.tabCloseButton": "off",
   "workbench.startupEditor": "none",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "editor.renderWhitespace": "all",
-  "window.titleBarStyle": "custom",
-  "window.newWindowDimensions": "maximized",
-  "breadcrumbs.enabled": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[ruby]": {
     "editor.formatOnSave": false
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[json]": {
+  "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
