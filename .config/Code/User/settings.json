@@ -77,5 +77,14 @@
   "editor.renderWhitespace": "all",
   "window.titleBarStyle": "custom",
   "window.newWindowDimensions": "maximized",
-  "breadcrumbs.enabled": true
+  "breadcrumbs.enabled": true,
+  "[ruby]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

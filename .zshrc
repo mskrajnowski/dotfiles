@@ -19,6 +19,7 @@ SPACESHIP_PROMPT_ORDER=(
 )
 
 plugins=(
+    aws
     docker
     docker-compose
     dotenv
