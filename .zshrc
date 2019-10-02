@@ -92,6 +92,10 @@ function uuid5 {
     python -c "import uuid; print(uuid.uuid5(uuid.UUID('$1'), '$2'))"
 }
 
+function gitignore() {
+    http --body "https://www.gitignore.io/api/$@"
+}
+
 if uname -s | grep -Fq "Linux"; then
     # Linux specific (including WSL) config
 fi
