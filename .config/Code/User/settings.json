@@ -24,7 +24,10 @@
   "editor.renderIndentGuides": true,
   "editor.renderLineHighlight": "all",
   "editor.renderWhitespace": "all",
-  "editor.rulers": [70, 79],
+  "editor.rulers": [
+    70,
+    79
+  ],
   "editor.suggestSelection": "first",
   "eslint.validate": [
     "javascript",
@@ -73,11 +76,15 @@
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "terminal.integrated.fontSize": 13,
+  "terminal.integrated.shell.linux": "/usr/bin/zsh",
   "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
   "terraform.indexing": {
     "delay": 500,
     "enabled": false,
-    "exclude": [".terraform/**/*", "**/.terraform/**/*"],
+    "exclude": [
+      ".terraform/**/*",
+      "**/.terraform/**/*"
+    ],
     "liveIndexing": false
   },
   "terraform.languageServer": {
