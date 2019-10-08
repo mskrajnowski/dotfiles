@@ -98,7 +98,7 @@
   "window.openFoldersInNewWindow": "on",
   "window.restoreFullscreen": true,
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": -1,
+  "window.zoomLevel": 0,
   "workbench.editor.enablePreview": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.revealIfOpen": true,
