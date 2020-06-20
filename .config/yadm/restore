@@ -1,0 +1,4 @@
+#!/bin/sh
+
+$HOME/.config/yadm/vscode/restore
+$HOME/.config/yadm/tilix/restore
