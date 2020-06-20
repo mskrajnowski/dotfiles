@@ -1,0 +1,30 @@
+#!/bin/sh
+
+set -e
+
+# gnome and pop os keyboard shortcuts
+paths="
+  /org/gnome/desktop/wm/keybindings
+  /org/gnome/mutter/keybindings
+  /org/gnome/settings-daemon/plugins/media-keys
+  /org/gnome/shell/extensions/pop-shell
+"
+
+# tilix
+paths="
+  $paths
+  /com/gexperts/Tilix
+"
+
+dump_path="$(dirname $0)/dconf.ini"
+echo -n >"$dump_path"
+
+for path in $paths; do
+  dconf dump "$path/" \
+  | sed -E "s;^\[(.*)\]$;[$path/\1];" \
+  | sed -E 's;^\[/+;[;' \
+  | sed -E 's;/+\]$;];' \
+  >>"$dump_path"
+
+  echo >>"$dump_path"
+done

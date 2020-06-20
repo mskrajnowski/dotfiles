@@ -1,0 +1,4 @@
+#!/bin/sh
+
+dump_path="$(dirname $0)/dconf.ini"
+cat "$dump_path" | dconf load /
