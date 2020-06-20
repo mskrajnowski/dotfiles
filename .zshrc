@@ -81,15 +81,15 @@ function random-string {
 }
 
 function uuid3 {
-    python -c "import uuid; print(uuid.uuid3(uuid.UUID('$1'), '$2'))"
+    python3 -c "import uuid; print(uuid.uuid3(uuid.UUID('$1'), '$2'))"
 }
 
 function uuid4 {
-    python -c "import uuid; print(uuid.uuid4())"
+    python3 -c "import uuid; print(uuid.uuid4())"
 }
 
 function uuid5 {
-    python -c "import uuid; print(uuid.uuid5(uuid.UUID('$1'), '$2'))"
+    python3 -c "import uuid; print(uuid.uuid5(uuid.UUID('$1'), '$2'))"
 }
 
 function gitignore() {
