@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+extensions_list_path="$(dirname "$0")/.extensions"
+
+create () {
+    code --list-extensions | sort --ignore-case >"$extensions_list_path"
+}
+
+restore () {
+    xargs \
+        --arg-file "$extensions_list_path" \
+        --delimiter '\n' \
+        --max-args 1 \
+        code --force --install-extension
+}
+
+case "$1" in
+    create) create ;;
+    restore) restore ;;
+    *) exit 1 ;;
+esac

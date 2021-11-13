@@ -1,0 +1,9 @@
+[Unit]
+Description=Create a dotfiles snapshot
+
+[Service]
+Type=oneshot
+ExecStart=%h/dotfiles/bin/snapshot create
+
+[Install]
+WantedBy=default.target

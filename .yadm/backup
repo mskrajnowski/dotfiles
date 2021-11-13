@@ -1,4 +1,0 @@
-#!/bin/sh
-
-$HOME/.yadm/vscode/backup
-$HOME/.yadm/tilix/backup
