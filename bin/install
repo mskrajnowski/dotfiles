@@ -13,7 +13,7 @@ mkdir -p \
   "$HOME/.oh-my-zsh/custom/themes"
 
 stow --dir "$dotfiles_dir" --target "$HOME" \
-  services \
+  dotfiles \
   codestyle \
   git \
   htop \
