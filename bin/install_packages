@@ -20,7 +20,7 @@ sudo dnf install -y \
 
 # https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
 echo >&2 "Adding VSCode repository"
-sudo cat >/etc/yum.repos.d/vscode.repo <<EOF
+sudo sh -c 'cat >/etc/yum.repos.d/vscode.repo' <<EOF
 [code]
 name=Visual Studio Code
 baseurl=https://packages.microsoft.com/yumrepos/vscode
