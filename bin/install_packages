@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+# set -x
+
+if ! command -v dnf &>/dev/null; then
+  echo "Currently only Fedora is supported"
+  exit 1
+fi
+
+echo >&2 "Installing updates"
+dnf check-updates
+sudo dnf upgrade -y
+
+# https://rpmfusion.org/Configuration
+echo >&2 "Adding RPM Fusion repositories"
+sudo dnf install -y \
+  https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+  https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+# https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
+echo >&2 "Adding VSCode repository"
+sudo cat >/etc/yum.repos.d/vscode.repo <<EOF
+[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+EOF
+
+# https://docs.docker.com/engine/install/fedora/
+echo >&2 "Adding Docker repository"
+sudo dnf config-manager --add-repo \
+    https://download.docker.com/linux/fedora/docker-ce.repo
+
+# https://flatpak.org/setup/Fedora/
+echo >&2 "Adding Flathub repository"
+flatpak remote-add --if-not-exists \
+  flathub https://flathub.org/repo/flathub.flatpakrepo
+
+echo >&2 "Installing RPM packages"
+sudo dnf install -y \
+  containerd.io \
+  curl \
+  docker-ce \
+  docker-ce-cli \
+  ffmpeg \
+  git \
+  gnome-extensions-app \
+  gnome-tweaks \
+  htop \
+  httpie \
+  jq \
+  ncdu \
+  ranger \
+  stow \
+  tig \
+  tilix \
+  tilix-nautilus \
+  vim \
+  vscode \
+  zsh
+
+echo >&2 "Installing flatpak apps"
+flatpak install flathub \
+  com.bitwarden.desktop \
+  org.flameshot.Flameshot \
+  com.uploadedlobster.peek \
+  rest.insomnia.Insomnia
+
+# https://docs.docker.com/compose/install/
+echo >&2 "Installing docker-compose"
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# https://github.com/ohmyzsh/ohmyzsh#manual-installation
+echo >&2 "Installing oh-my-zsh"
+git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh

@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 
-set -ex
+set -eo pipefail
+# set -x
 
 dotfiles_dir="$(dirname "$0")/.."
+set -u
+
+echo >&2 "Installing system packages and apps"
+"$dotfiles_dir/bin/install_packages"
+
+echo >&2 "Creating dotfile symlinks"
 
 # prevent stow from folding directories,
 # which it shouldn't own
@@ -20,6 +27,12 @@ stow --dir "$dotfiles_dir" --target "$HOME" \
   vscode \
   zsh
 
+echo >&2 "Restoring non-dotfile configs"
+
 "$dotfiles_dir/bin/snapshot" restore
 
+echo >&2 "Enabling non-dotfile config snapshot service"
 systemctl --user enable dotfiles_snapshot.timer
+
+echo >&2 "Setting default shell to zsh"
+chsh -s "$(which zsh)"
