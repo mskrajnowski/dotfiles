@@ -9,7 +9,7 @@ if ! command -v dnf &>/dev/null; then
 fi
 
 echo >&2 "Installing updates"
-dnf check-updates
+dnf check-update
 sudo dnf upgrade -y
 
 # https://rpmfusion.org/Configuration
