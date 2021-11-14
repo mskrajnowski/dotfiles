@@ -63,7 +63,7 @@ sudo dnf install -y \
   zsh
 
 echo >&2 "Installing flatpak apps"
-flatpak install flathub \
+flatpak install -y flathub \
   com.bitwarden.desktop \
   org.flameshot.Flameshot \
   com.uploadedlobster.peek \
