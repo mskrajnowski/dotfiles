@@ -36,3 +36,6 @@ systemctl --user enable dotfiles_snapshot.timer
 
 echo >&2 "Setting default shell to zsh"
 chsh -s "$(which zsh)"
+
+echo >&2 "You're all set up!"
+echo >&2 "Reboot the system to make sure all changes take effect and enjoy."
