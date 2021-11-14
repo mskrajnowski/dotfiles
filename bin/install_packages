@@ -76,4 +76,5 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # https://github.com/ohmyzsh/ohmyzsh#manual-installation
 echo >&2 "Installing oh-my-zsh"
-git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+rm -rf "$HOME/.oh-my-zsh"
+git clone https://github.com/ohmyzsh/ohmyzsh.git "$HOME/.oh-my-zsh"
