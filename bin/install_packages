@@ -41,6 +41,7 @@ flatpak remote-add --if-not-exists \
 
 echo >&2 "Installing RPM packages"
 sudo dnf install -y \
+  code \
   containerd.io \
   curl \
   docker-ce \
@@ -59,7 +60,6 @@ sudo dnf install -y \
   tilix \
   tilix-nautilus \
   vim \
-  vscode \
   zsh
 
 echo >&2 "Installing flatpak apps"
