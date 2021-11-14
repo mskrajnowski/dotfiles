@@ -69,6 +69,15 @@ flatpak install -y flathub \
   com.uploadedlobster.peek \
   rest.insomnia.Insomnia
 
+# https://docs.docker.com/engine/install/linux-postinstall/
+echo >&2 "Starting the docker service"
+sudo systemctl enable --now docker.service
+sudo systemctl enable --now containerd.service
+
+echo >&2 "Adding the current user to the docker group"
+sudo groupadd -f docker
+sudo usermod -aG docker "$USER"
+
 # https://docs.docker.com/compose/install/
 echo >&2 "Installing docker-compose"
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
