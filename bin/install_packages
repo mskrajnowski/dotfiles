@@ -60,7 +60,8 @@ sudo dnf install -y \
   tilix \
   tilix-nautilus \
   vim \
-  zsh
+  zsh \
+  util-linux-user
 
 echo >&2 "Installing flatpak apps"
 flatpak install -y flathub \
