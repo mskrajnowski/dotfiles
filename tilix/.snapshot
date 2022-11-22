@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+config_path="$(dirname "$0")/dconf.ini"
+
+create () {
+    dconf dump '/com/gexperts/Tilix/' >"$config_path"
+}
+
+restore () {
+    dconf load '/com/gexperts/Tilix/' <"$config_path"
+}
+
+case "$1" in
+    create) create ;;
+    restore) restore ;;
+    *) exit 1 ;;
+esac

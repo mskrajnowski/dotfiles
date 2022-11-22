@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -ex
+
+dotfiles_dir="$(dirname "$0")/.."
+
+# prevent stow from folding directories,
+# which it shouldn't own
+mkdir -p \
+  "$HOME/.config/htop" \
+  "$HOME/.config/systemd/user" \
+  "$HOME/.config/Code/User" \
+  "$HOME/.oh-my-zsh/custom/themes"
+
+stow --dir "$dotfiles_dir" --target "$HOME" \
+  dotfiles \
+  codestyle \
+  git \
+  htop \
+  vscode \
+  zsh
+
+"$dotfiles_dir/bin/snapshot" restore
+
+systemctl --user enable dotfiles_snapshot.timer

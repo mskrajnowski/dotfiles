@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+dotfiles_dir="$(dirname "$0")/.."
+
+apps=(
+  tilix
+  vscode
+)
+
+create () {
+  for app in ${apps[@]}; do
+    "$dotfiles_dir/$app/.snapshot" create
+  done
+}
+
+restore () {
+  for app in ${apps[@]}; do
+    "$dotfiles_dir/$app/.snapshot" restore
+  done
+}
+
+case "$1" in
+  create) create ;;
+  restore) restore ;;
+  *) exit 1 ;;
+esac
