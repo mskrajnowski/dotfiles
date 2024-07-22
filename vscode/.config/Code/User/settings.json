@@ -1,5 +1,25 @@
 {
-  "breadcrumbs.enabled": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "cSpell.language": "en,pl",
   "cSpell.userWords": [
     "arity",
@@ -16,19 +36,13 @@
     "tzinfo"
   ],
   "diffEditor.ignoreTrimWhitespace": false,
-  "editor.fontFamily": "'Source Code Pro'",
   "editor.fontSize": 13,
   "editor.formatOnSave": true,
-  "editor.minimap.enabled": true,
-  "editor.minimap.renderCharacters": false,
-  "editor.renderIndentGuides": true,
+  "editor.guides.indentation": true,
+  "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "all",
   "editor.renderWhitespace": "all",
-  "editor.rulers": [
-    70,
-    79
-  ],
-  "editor.suggestSelection": "first",
+  "editor.rulers": [70, 80],
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -37,54 +51,17 @@
   ],
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "files.exclude": {
-    "**/*.pyc": true,
-    "**/.DS_Store": true,
-    "**/.git": true,
-    "**/.hg": true,
-    "**/.mypy_cache": true,
-    "**/.sass-cache": true,
-    "**/.subl": true,
-    "**/.svn": true,
-    "**/.vscode": true,
-    "**/__pycache__": true,
-    "**/bower_components": true,
-    "**/node_modules": true,
-    "**/tmp": true,
-    "**/vendor": true
-  },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-  "git.confirmSync": false,
-  "gitlens.advanced.messages": {
-    "suppressCommitHasNoPreviousCommitWarning": false,
-    "suppressCommitNotFoundWarning": false,
-    "suppressFileNotUnderSourceControlWarning": false,
-    "suppressGitVersionWarning": false,
-    "suppressLineUncommittedWarning": false,
-    "suppressNoRepositoryWarning": false,
-    "suppressResultsExplorerNotice": false,
-    "suppressShowKeyBindingsNotice": true,
-    "suppressUpdateNotice": false,
-    "suppressWelcomeNotice": true
-  },
-  "gitlens.keymap": "chorded",
-  "go.formatTool": "goimports",
-  "go.toolsGopath": "~/.go",
-  "go.useLanguageServer": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
+  "notebook.formatOnSave.enabled": true,
+  "telemetry.telemetryLevel": "off",
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.shell.linux": "/usr/bin/zsh",
-  "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
   "terraform.indexing": {
     "delay": 500,
     "enabled": false,
-    "exclude": [
-      ".terraform/**/*",
-      "**/.terraform/**/*"
-    ],
+    "exclude": [".terraform/**/*", "**/.terraform/**/*"],
     "liveIndexing": false
   },
   "terraform.languageServer": {
@@ -92,38 +69,17 @@
     "enabled": false
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "vsintellicode.modify.editor.suggestSelection": "disabled",
+  "window.commandCenter": false,
+  "window.customTitleBarVisibility": "auto",
   "window.newWindowDimensions": "maximized",
-  "window.openFilesInNewWindow": "off",
-  "window.openFoldersInNewWindow": "on",
-  "window.restoreFullscreen": true,
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": 0,
+  "workbench.activityBar.location": "top",
   "workbench.editor.enablePreview": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.revealIfOpen": true,
-  "workbench.editor.showTabs": true,
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.tabActionCloseVisibility": false,
   "workbench.editor.tabCloseButton": "off",
-  "workbench.startupEditor": "none",
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[ruby]": {
-    "editor.formatOnSave": false
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "workbench.layoutControl.enabled": false,
+  "workbench.startupEditor": "none"
 }
