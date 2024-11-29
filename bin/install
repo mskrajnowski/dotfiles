@@ -7,7 +7,6 @@ dotfiles_dir="$(dirname "$0")/.."
 # prevent stow from folding directories,
 # which it shouldn't own
 mkdir -p \
-  "$HOME/.config/htop" \
   "$HOME/.config/systemd/user" \
   "$HOME/.config/Code/User" \
   "$HOME/.oh-my-zsh/custom/themes"
