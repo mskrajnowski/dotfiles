@@ -11,3 +11,6 @@
 
 # direnv
 .envrc
+
+# kde directory settings
+.directory
