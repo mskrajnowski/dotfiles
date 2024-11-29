@@ -14,6 +14,9 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -36,6 +39,10 @@
     "tzinfo"
   ],
   "diffEditor.ignoreTrimWhitespace": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.codeLens": false,
   "editor.fontSize": 13,
   "editor.formatOnSave": true,
   "editor.guides.indentation": true,
@@ -43,6 +50,8 @@
   "editor.renderLineHighlight": "all",
   "editor.renderWhitespace": "all",
   "editor.rulers": [70, 80],
+  "eslint.codeActionsOnSave.mode": "all",
+  "eslint.format.enable": false,
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -53,8 +62,12 @@
   "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
+  "git.openDiffOnClick": false,
+  "javascript.preferences.useAliasesForRenames": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "notebook.formatOnSave.enabled": true,
+  "redhat.telemetry.enabled": false,
+  "scm.alwaysShowActions": true,
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.shell.linux": "/usr/bin/zsh",
@@ -68,12 +81,19 @@
     "args": [],
     "enabled": false
   },
+  "terraform.languageServer.enable": false,
+  "terraform.languageServer.indexing.ignoreDirectoryNames": ["*"],
+  "terraform.languageServer.indexing.ignorePaths": ["*"],
+  "typescript.preferences.useAliasesForRenames": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.autoDetectColorScheme": true,
   "window.commandCenter": false,
   "window.customTitleBarVisibility": "auto",
+  "window.menuBarVisibility": "toggle",
   "window.newWindowDimensions": "maximized",
   "window.titleBarStyle": "custom",
   "workbench.activityBar.location": "top",
+  "workbench.colorTheme": "Default Light Modern",
   "workbench.editor.enablePreview": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.revealIfOpen": true,
