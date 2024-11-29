@@ -8,8 +8,7 @@ dotfiles_dir="$(dirname "$0")/.."
 # which it shouldn't own
 mkdir -p \
   "$HOME/.config/systemd/user" \
-  "$HOME/.config/Code/User" \
-  "$HOME/.oh-my-zsh/custom/themes"
+  "$HOME/.config/Code/User"
 
 stow --dir "$dotfiles_dir" --target "$HOME" \
   dotfiles \
