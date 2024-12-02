@@ -14,7 +14,6 @@ stow --dir "$dotfiles_dir" --target "$HOME" \
   dotfiles \
   codestyle \
   git \
-  htop \
   vscode \
   zsh
 
