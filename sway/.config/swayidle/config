@@ -1,0 +1,24 @@
+# https://github.com/swaywm/swayidle
+
+# based on default fedora swayidle config
+# /usr/share/sway/config.d/90-swayidle.conf
+# changes:
+# - switched to a swayidle config file
+# - replaced swaylock with gtklock
+
+# loginctl lock-session|unlock-session support
+lock 'gtklock -d'
+unlock 'pkill -xu "$USER" -SIGUSR1 gtklock'
+
+# lock the screen before sleeping
+before-sleep 'gtklock -d'
+
+# lock the screen after 5m of inactivity
+timeout 300 'gtklock -d'
+
+# power off the screen after additional 5s
+timeout 305 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
+
+# power off the screen after 5s of inactivity
+# when the screen was locked manually
+timeout 5 'pgrep -xu "$USER" gtklock >/dev/null && swaymsg "output * power off"' resume 'pgrep -xu "$USER" gtklock >/dev/null && swaymsg "output * power on"'

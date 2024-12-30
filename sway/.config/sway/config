@@ -1,0 +1,72 @@
+# Read `man 5 sway` for a complete reference.
+# https://man.archlinux.org/man/sway.5.en
+
+# Include default configs from:
+#  - /usr/share/sway/config.d
+#  - /etc/sway/config.d
+# Override by adding a file with the same name to:
+#  - $XDG_CONFIG_HOME/sway/config.d ($HOME/.config/sway/config.d)
+set $mod Super
+include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
+
+# window decorations
+font Cantarell 8
+default_border pixel 2
+default_floating_border pixel 2
+gaps inner 0
+gaps outer 0
+
+output * bg #000000 solid_color
+
+# Inputs
+input * xkb_layout pl
+input "type:touchpad" {
+    dwt enabled
+    tap enabled
+    drag enabled
+    middle_emulation enabled
+}
+
+# use SwayNotificationCenter
+# https://github.com/ErikReider/SwayNotificationCenter
+exec swaync
+set $open_notifications exec swaync-client -t -sw
+
+# use foot terminal
+# https://codeberg.org/dnkl/foot/
+set $open_terminal exec foot
+
+# use nwg-drawer
+# https://github.com/nwg-piotr/nwg-drawer
+# kill daemon with $ pkill -f nwg-drawer
+exec_always nwg-drawer -r \
+    -nocats \
+    -nofs \
+    -pblock 'loginctl lock-session' \
+    -pbexit 'swaymsg exit' \
+    -pbreboot 'systemctl reboot' \
+    -pbpoweroff 'systemctl -i poweroff'
+set $open_launcher exec nwg-drawer
+
+# use swayidle and gtklock
+# https://github.com/swaywm/swayidle
+# https://github.com/jovanlanik/gtklock
+set $lock exec loginctl lock-session
+exec swayidle -w
+
+# use nwg-panel
+# https://github.com/nwg-piotr/nwg-panel
+exec_always nwg-panel
+
+# use flameshot
+# https://flameshot.org/docs/advanced/commandline-options/
+set $grab_region exec flatpak run org.flameshot.Flameshot gui
+
+# use firefox as the default browser
+set $open_browser exec firefox
+
+# keyboard shortcuts
+include ./keys.conf
+
+# local overrides
+include ./local.conf
