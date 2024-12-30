@@ -10,7 +10,7 @@ mkdir -p \
   "$HOME/.config/systemd/user" \
   "$HOME/.config/Code/User"
 
-stow --dir "$dotfiles_dir" --target "$HOME" \
+stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   dotfiles \
   codestyle \
   git \
