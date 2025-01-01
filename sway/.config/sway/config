@@ -34,7 +34,7 @@ set $open_notifications exec swaync-client -t -sw
 
 # use foot terminal
 # https://codeberg.org/dnkl/foot/
-set $open_terminal exec foot
+set $open_terminal exec alacritty
 
 # use nwg-drawer
 # https://github.com/nwg-piotr/nwg-drawer
