@@ -18,6 +18,11 @@ gaps outer 0
 
 output * bg #000000 solid_color
 
+# automatically switch to activated windows
+focus_on_window_activation focus
+exec_always ~/.config/sway/scripts/focus-urgent.sh
+force_display_urgency_hint 1000 ms
+
 # Inputs
 input * xkb_layout pl
 input "type:touchpad" {
