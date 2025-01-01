@@ -7,6 +7,8 @@ dotfiles_dir="$(dirname "$0")/.."
 # prevent stow from folding directories,
 # which it shouldn't own
 mkdir -p \
+  "$HOME/.config" \
+  "$HOME/.local/share/applications" \
   "$HOME/.config/systemd/user" \
   "$HOME/.config/Code/User" \
   "$HOME/.config/nwg-panel"
@@ -19,6 +21,6 @@ stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   zsh \
   sway
 
-"$dotfiles_dir/bin/snapshot" restore
+# "$dotfiles_dir/bin/snapshot" restore
 
 systemctl --user enable --now dotfiles_snapshot.timer

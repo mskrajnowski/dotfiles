@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Settings
+Comment=System settings
+Categories=System
+Exec=env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
+Icon=org.gnome.Settings-system-symbolic
