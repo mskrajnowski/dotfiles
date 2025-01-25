@@ -1,2 +1,5 @@
 [font]
 size = 9
+
+[keyboard]
+bindings = [{ key = "Return", mods = "Super", action = "SpawnNewInstance" }]

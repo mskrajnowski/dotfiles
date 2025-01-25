@@ -20,7 +20,7 @@ output * bg #000000 solid_color
 
 # automatically switch to activated windows
 focus_on_window_activation focus
-exec_always ~/.config/sway/scripts/focus-urgent.sh
+exec ~/.config/sway/scripts/focus-urgent.sh
 force_display_urgency_hint 1000 ms
 
 # Inputs
@@ -37,8 +37,8 @@ input "type:touchpad" {
 exec swaync
 set $open_notifications exec swaync-client -t -sw
 
-# use foot terminal
-# https://codeberg.org/dnkl/foot/
+# use alacritty terminal
+# https://alacritty.org
 set $open_terminal exec alacritty
 
 # use nwg-drawer
