@@ -2,11 +2,11 @@
 set -euo pipefail
 
 iter_focused_app_ids() {
-  swaymsg -mt subscribe '["window"]' | jq --unbuffered -r '
+  swaymsg -mt subscribe '["window", "workspace"]' | jq --unbuffered -r '
     select(
-      .change == "focus"
-      and .container.focused == true
-    ).container.app_id
+      (.change == "focus" and .container.focused == true)
+      or .change == "init"
+    ) | if .change == "focus" then .container.app_id else "" end
   '
 }
 
