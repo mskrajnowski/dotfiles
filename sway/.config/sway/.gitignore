@@ -1,1 +1,5 @@
 /local.conf
+
+# nwg-displays generated settings
+/outputs
+/workspaces

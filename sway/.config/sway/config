@@ -73,5 +73,9 @@ set $open_browser exec firefox
 # keyboard shortcuts
 include ./keys.conf
 
+# nwg-displays settings
+include ./outputs
+include ./workspaces
+
 # local overrides
 include ./local.conf
