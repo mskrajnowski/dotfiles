@@ -101,5 +101,7 @@
   "workbench.startupEditor": "none",
   "chat.commandCenter.enabled": false,
   "window.titleBarStyle": "native",
-  "workbench.statusBar.visible": false
+  "workbench.statusBar.visible": false,
+  "workbench.preferredLightColorTheme": "Solarized Light",
+  "workbench.preferredDarkColorTheme": "Solarized Dark"
 }

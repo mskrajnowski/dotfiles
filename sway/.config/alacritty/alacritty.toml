@@ -1,3 +1,6 @@
+[general]
+import = ["themes/solarized-light.toml"]
+
 [font]
 size = 9
 
