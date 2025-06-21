@@ -40,6 +40,10 @@ if [ "$DEKSTOP_SESSION" = kde ] && command -v ksshaskpass >/dev/null; then
   export SSH_ASKPASS_REQUIRE=prefer
 fi
 
+if [[ -f ~/.local/bin/mise ]]; then
+  eval "$(~/.local/bin/mise activate zsh)"
+fi
+
 # enable zmv for batch renaming
 # https://blog.thecodewhisperer.com/permalink/renaming-magically-with-zmv
 autoload -U zmv
