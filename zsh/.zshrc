@@ -19,6 +19,7 @@ export ZSH=$HOME/.oh-my-zsh
 plugins=(
     docker
     git
+    command-not-found
 )
 
 # Fix tilix VTE issue
