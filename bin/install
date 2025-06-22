@@ -20,7 +20,8 @@ stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   vscode \
   zsh \
   fish \
-  alacritty
+  alacritty \
+  aider
 
 "$dotfiles_dir/bin/snapshot" restore
 

@@ -14,3 +14,6 @@
 
 # kde directory settings
 .directory
+
+# aider config and temporary files
+.aider.*
