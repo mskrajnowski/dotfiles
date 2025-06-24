@@ -7,16 +7,20 @@ dotfiles_dir="$(dirname "$0")/.."
 # prevent stow from folding directories,
 # which it shouldn't own
 mkdir -p \
+  "$HOME/.config" \
+  "$HOME/.local/share/applications" \
   "$HOME/.config/systemd/user" \
-  "$HOME/.config/Code/User"
+  "$HOME/.config/Code/User" \
+  "$HOME/.config/nwg-panel"
 
 stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   dotfiles \
   codestyle \
   git \
   vscode \
-  zsh
+  zsh \
+  alacritty
 
 "$dotfiles_dir/bin/snapshot" restore
 
-systemctl --user enable dotfiles_snapshot.timer
+systemctl --user enable --now dotfiles_snapshot.timer
