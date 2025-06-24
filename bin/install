@@ -7,11 +7,11 @@ dotfiles_dir="$(dirname "$0")/.."
 # prevent stow from folding directories,
 # which it shouldn't own
 mkdir -p \
-  "$HOME/.config" \
   "$HOME/.local/share/applications" \
+  "$HOME/.config" \
   "$HOME/.config/systemd/user" \
   "$HOME/.config/Code/User" \
-  "$HOME/.config/nwg-panel"
+  "$HOME/.config/fish"
 
 stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   dotfiles \
@@ -19,6 +19,7 @@ stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   git \
   vscode \
   zsh \
+  fish \
   alacritty
 
 "$dotfiles_dir/bin/snapshot" restore
