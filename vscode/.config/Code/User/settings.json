@@ -88,11 +88,8 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.autoDetectColorScheme": true,
   "window.commandCenter": false,
-  "window.customTitleBarVisibility": "auto",
   "window.menuBarVisibility": "toggle",
   "window.newWindowDimensions": "maximized",
-  "window.titleBarStyle": "custom",
-  "workbench.activityBar.location": "top",
   "workbench.colorTheme": "Default Light Modern",
   "workbench.editor.enablePreview": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -102,5 +99,9 @@
   "workbench.editor.tabCloseButton": "off",
   "workbench.layoutControl.enabled": false,
   "workbench.startupEditor": "none",
-  "workbench.preferredLightColorTheme": "Solarized Light"
+  "chat.commandCenter.enabled": false,
+  "window.titleBarStyle": "native",
+  "workbench.statusBar.visible": false,
+  "workbench.preferredLightColorTheme": "Solarized Light",
+  "workbench.preferredDarkColorTheme": "Solarized Dark"
 }
