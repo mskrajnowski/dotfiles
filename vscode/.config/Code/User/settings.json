@@ -101,5 +101,6 @@
   "workbench.editor.tabActionCloseVisibility": false,
   "workbench.editor.tabCloseButton": "off",
   "workbench.layoutControl.enabled": false,
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "workbench.preferredLightColorTheme": "Solarized Light"
 }
