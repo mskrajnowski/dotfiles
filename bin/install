@@ -11,7 +11,8 @@ mkdir -p \
   "$HOME/.config" \
   "$HOME/.config/systemd/user" \
   "$HOME/.config/Code/User" \
-  "$HOME/.config/fish"
+  "$HOME/.config/fish" \
+  "$HOME/.config/mise"
 
 stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   dotfiles \
@@ -21,7 +22,8 @@ stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   zsh \
   fish \
   alacritty \
-  aider
+  aider \
+  mise
 
 "$dotfiles_dir/bin/snapshot" restore
 
