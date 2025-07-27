@@ -3,12 +3,12 @@ set -gxp PATH ~/.local/bin
 
 if status is-interactive
   # Commands to run in interactive sessions can go here
-  if command -q starship
-    starship init fish | source
-  end
-
   if command -q mise
     mise activate fish | source
+  end
+
+  if command -q starship
+    starship init fish | source
   end
 
   function random-string
