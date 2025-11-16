@@ -22,12 +22,6 @@ plugins=(
     command-not-found
 )
 
-# Fix tilix VTE issue
-# https://github.com/gnunn1/tilix/wiki/VTE-Configuration-Issue
-if [[ $TILIX_ID ]]; then
-    source /etc/profile.d/vte.sh
-fi
-
 # init oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 

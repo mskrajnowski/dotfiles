@@ -3,7 +3,6 @@
 dotfiles_dir="$(dirname "$0")/.."
 
 apps=(
-  tilix
   vscode
 )
 
