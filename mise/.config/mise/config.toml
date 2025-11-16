@@ -1,4 +1,5 @@
 [tools]
+"aqua:codeberg.org/mergiraf/mergiraf" = "latest"
 difftastic = "latest"
 starship = "latest"
 usage = "latest"
