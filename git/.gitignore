@@ -9,6 +9,9 @@
 # dotenv
 .env
 
+# local mise config
+mise.local.toml
+
 # direnv
 .envrc
 
