@@ -12,6 +12,12 @@
 # local mise config
 mise.local.toml
 
+# local docker compose overrides
+docker-compose.override.yaml
+docker-compose.override.yml
+compose.override.yaml
+compose.override.yml
+
 # direnv
 .envrc
 
