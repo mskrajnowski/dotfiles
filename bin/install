@@ -10,7 +10,8 @@ mkdir -p \
   "$HOME/.local/share/applications" \
   "$HOME/.config" \
   "$HOME/.config/fish" \
-  "$HOME/.config/mise"
+  "$HOME/.config/mise" \
+  "$HOME/.config/alacritty/themes"
 
 stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   codestyle \
