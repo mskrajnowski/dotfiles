@@ -9,12 +9,10 @@ dotfiles_dir="$(dirname "$0")/.."
 mkdir -p \
   "$HOME/.local/share/applications" \
   "$HOME/.config" \
-  "$HOME/.config/systemd/user" \
   "$HOME/.config/fish" \
   "$HOME/.config/mise"
 
 stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
-  dotfiles \
   codestyle \
   git \
   zsh \
@@ -22,7 +20,3 @@ stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   alacritty \
   aider \
   mise
-
-"$dotfiles_dir/bin/snapshot" restore
-
-systemctl --user enable --now dotfiles_snapshot.timer

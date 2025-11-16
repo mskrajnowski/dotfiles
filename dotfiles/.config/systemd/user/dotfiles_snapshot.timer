@@ -1,8 +1,0 @@
-[Unit]
-Description=Create dotfiles snapshot every 10 minutes
-
-[Timer]
-OnActiveSec=10min
-
-[Install]
-WantedBy=timers.target
