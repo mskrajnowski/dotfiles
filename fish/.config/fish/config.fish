@@ -11,6 +11,10 @@ if status is-interactive
     starship init fish | source
   end
 
+  if test -S ~/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
+    export SSH_AUTH_SOCK=$HOME/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
+  end
+
   function random-string
     set size 32
 
