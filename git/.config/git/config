@@ -32,6 +32,4 @@
 	driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L
 
 [include]
-	path = ~/.gitconfig.local
-[include]
 	path = ~/.config/git/config.local

@@ -9,6 +9,7 @@ dotfiles_dir="$(dirname "$0")/.."
 mkdir -p \
   "$HOME/.local/share/applications" \
   "$HOME/.config" \
+  "$HOME/.config/git" \
   "$HOME/.config/fish" \
   "$HOME/.config/mise" \
   "$HOME/.config/alacritty/themes" \
