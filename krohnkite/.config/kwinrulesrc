@@ -1,0 +1,8 @@
+[General]
+count=1
+rules=dca941b0-59aa-4d96-a6c4-28e0b7581615
+
+[dca941b0-59aa-4d96-a6c4-28e0b7581615]
+Description=No minimum size
+minsizerule=2
+types=1
