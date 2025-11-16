@@ -21,8 +21,6 @@
 	ignore-case = true
 	refresh-mode = auto
 	main-view = id:true date:default author:full commit-title:yes,graph,refs,overflow=no
-[include]
-	path = ~/.gitconfig.local
 [merge]
 	conflictStyle = diff3
 [alias]
@@ -32,3 +30,8 @@
 [merge "mergiraf"]
 	name = mergiraf
 	driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L
+
+[include]
+	path = ~/.gitconfig.local
+[include]
+	path = ~/.config/git/config.local
