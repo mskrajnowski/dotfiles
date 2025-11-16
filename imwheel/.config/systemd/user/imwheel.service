@@ -1,7 +1,0 @@
-[Service]
-Environment="DISPLAY=:1"
-ExecStart=/usr/bin/imwheel --kill --buttons '4 5' -d
-Restart=always
-
-[Install]
-WantedBy=default.target
