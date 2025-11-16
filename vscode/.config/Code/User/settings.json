@@ -1,47 +1,7 @@
 {
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "cSpell.language": "en,pl",
-  "cSpell.userWords": [
-    "arity",
-    "cyclomatic",
-    "django",
-    "fullscreen",
-    "minimap",
-    "params",
-    "permalink",
-    "pycache",
-    "reindex",
-    "repo",
-    "slugify",
-    "tzinfo"
-  ],
-  "diffEditor.ignoreTrimWhitespace": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit"
-  },
+  // General settings
+  "chat.commandCenter.enabled": false,
+  "editor.codeActionsOnSave": { "source.fixAll": "explicit" },
   "editor.codeLens": false,
   "editor.fontSize": 13,
   "editor.formatOnSave": true,
@@ -50,6 +10,57 @@
   "editor.renderLineHighlight": "all",
   "editor.renderWhitespace": "all",
   "editor.rulers": [70, 80],
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.exclude": { "**/.jj": true, "**/.venv": true },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "git.blame.editorDecoration.enabled": false,
+  "git.openDiffOnClick": false,
+  "git.repositoryScanMaxDepth": 0,
+  "scm.alwaysShowActions": true,
+  "telemetry.telemetryLevel": "off",
+  "terminal.integrated.fontSize": 13,
+  "window.autoDetectColorScheme": true,
+  "window.commandCenter": false,
+  "window.menuBarVisibility": "toggle",
+  "window.newWindowDimensions": "maximized",
+  "window.newWindowProfile": "Default",
+  "window.titleBarStyle": "native",
+  "workbench.colorTheme": "Default Light Modern",
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.revealIfOpen": true,
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.tabActionCloseVisibility": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.preferredDarkColorTheme": "Solarized Dark",
+  "workbench.preferredLightColorTheme": "Solarized Light",
+  "workbench.startupEditor": "none",
+
+  // Language-specific settings
+  "[markdown]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[yaml]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[less]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[scss]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+  "[toml]": { "editor.defaultFormatter": "tamasfe.even-better-toml" },
+  "evenBetterToml.formatter.arrayAutoCollapse": false,
+  "evenBetterToml.formatter.arrayTrailingComma": true,
+
+  // JS/TS
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "javascript.preferences.useAliasesForRenames": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.useAliasesForRenames": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "eslint.codeActionsOnSave.mode": "all",
   "eslint.format.enable": false,
   "eslint.validate": [
@@ -58,49 +69,45 @@
     "typescript",
     "typescriptreact"
   ],
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
-  "git.openDiffOnClick": false,
-  "javascript.preferences.useAliasesForRenames": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
+  "eslint.runtime": "node",
+
+  // Python
+  "[python]": {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.tabSize": 4,
+    "editor.indentSize": 4,
+    "editor.insertSpaces": true
+  },
+  "notebook.lineNumbers": "on",
   "notebook.formatOnSave.enabled": true,
+  "notebook.codeActionsOnSave": {
+    "notebook.source.fixAll": "explicit",
+    "notebook.source.organizeImports": "explicit"
+  },
+
+  // Other
   "redhat.telemetry.enabled": false,
-  "scm.alwaysShowActions": true,
-  "telemetry.telemetryLevel": "off",
-  "terminal.integrated.fontSize": 13,
-  "terminal.integrated.shell.linux": "/usr/bin/zsh",
-  "terraform.indexing": {
-    "delay": 500,
-    "enabled": false,
-    "exclude": [".terraform/**/*", "**/.terraform/**/*"],
-    "liveIndexing": false
+  "diffEditor.ignoreTrimWhitespace": true,
+  "workbench.statusBar.visible": false,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "terraform.languageServer": {
-    "args": [],
-    "enabled": false
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "terraform.languageServer.enable": false,
-  "terraform.languageServer.indexing.ignoreDirectoryNames": ["*"],
-  "terraform.languageServer.indexing.ignorePaths": ["*"],
-  "typescript.preferences.useAliasesForRenames": false,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "window.autoDetectColorScheme": true,
-  "window.commandCenter": false,
-  "window.customTitleBarVisibility": "auto",
-  "window.menuBarVisibility": "toggle",
-  "window.newWindowDimensions": "maximized",
-  "window.titleBarStyle": "custom",
-  "workbench.activityBar.location": "top",
-  "workbench.colorTheme": "Default Light Modern",
-  "workbench.editor.enablePreview": true,
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.editor.revealIfOpen": true,
-  "workbench.editor.showTabs": "multiple",
-  "workbench.editor.tabActionCloseVisibility": false,
-  "workbench.editor.tabCloseButton": "off",
-  "workbench.layoutControl.enabled": false,
-  "workbench.startupEditor": "none",
-  "workbench.preferredLightColorTheme": "Solarized Light"
+  "workbench.secondarySideBar.defaultVisibility": "hidden"
+
+  // TODO: VSCode will drop new settings here, move them to the appropriate section
 }
