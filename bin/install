@@ -19,4 +19,5 @@ stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   fish \
   alacritty \
   aider \
-  mise
+  mise \
+  starship
