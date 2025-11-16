@@ -1,3 +1,4 @@
 [tools]
+difftastic = "latest"
 starship = "latest"
 usage = "latest"
