@@ -25,3 +25,7 @@
 	path = ~/.gitconfig.local
 [merge]
 	conflictStyle = diff3
+[alias]
+	logt = -c diff.external=difft log --ext-diff
+	showt = -c diff.external=difft show --ext-diff
+	difft = -c diff.external=difft diff
