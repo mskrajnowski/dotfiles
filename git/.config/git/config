@@ -1,6 +1,5 @@
 [core]
 	editor = code -w
-	excludesfile = ~/.gitignore
 [rerere]
 	enabled = true
 [push]
