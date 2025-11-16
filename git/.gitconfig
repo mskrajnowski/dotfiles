@@ -29,3 +29,6 @@
 	logt = -c diff.external=difft log --ext-diff
 	showt = -c diff.external=difft show --ext-diff
 	difft = -c diff.external=difft diff
+[merge "mergiraf"]
+	name = mergiraf
+	driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L
