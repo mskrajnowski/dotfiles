@@ -15,6 +15,7 @@
   "buffer_line_height": { "custom": 1.5 },
   "git": {
     "inline_blame": {
+      "enabled": false,
       "show_commit_summary": true
     }
   },
@@ -30,7 +31,7 @@
   "rounded_selection": false,
   "show_whitespaces": "all",
   "tabs": {
-    "show_close_button": "always",
+    "show_close_button": "hidden",
     "file_icons": true,
     "git_status": true
   },
@@ -49,10 +50,8 @@
   "outline_panel": { "button": false },
   "search": { "button": false },
   "tab_bar": { "show_nav_history_buttons": false },
-  "terminal": { "button": false },
+  "telemetry": { "diagnostics": false, "metrics": false },
+  "terminal": { "font_size": 13.0, "button": false },
   "title_bar": { "show_sign_in": false },
-  "toolbar": {
-    "breadcrumbs": false,
-    "quick_actions": false
-  }
+  "toolbar": { "breadcrumbs": false, "quick_actions": false }
 }
