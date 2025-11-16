@@ -13,7 +13,8 @@ mkdir -p \
   "$HOME/.config/fish" \
   "$HOME/.config/mise" \
   "$HOME/.config/alacritty/themes" \
-  "$HOME/.config/jj/conf.d"
+  "$HOME/.config/jj/conf.d" \
+  "$HOME/.config/zed"
 
 stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   codestyle \
@@ -24,4 +25,5 @@ stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   aider \
   mise \
   starship \
-  jujutsu
+  jujutsu \
+  zed

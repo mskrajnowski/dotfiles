@@ -1,0 +1,58 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "auto_install_extensions": {
+    "solarized": true
+  },
+
+  "buffer_font_size": 13.0,
+  "buffer_line_height": { "custom": 1.5 },
+  "git": {
+    "inline_blame": {
+      "show_commit_summary": true
+    }
+  },
+  "git_panel": {
+    "sort_by_path": true
+  },
+  "inlay_hints": { "enabled": true },
+  "middle_click_paste": false,
+  "preferred_line_length": 80,
+  "project_panel": {
+    "entry_spacing": "standard"
+  },
+  "rounded_selection": false,
+  "show_whitespaces": "all",
+  "tabs": {
+    "show_close_button": "always",
+    "file_icons": true,
+    "git_status": true
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Solarized Light",
+    "dark": "One Dark"
+  },
+  "wrap_guides": [70, 80],
+
+  // hide unused features
+  "collaboration_panel": { "button": false },
+  "diagnostics": { "button": false },
+  "disable_ai": true,
+  "notification_panel": { "button": false },
+  "outline_panel": { "button": false },
+  "search": { "button": false },
+  "tab_bar": { "show_nav_history_buttons": false },
+  "terminal": { "button": false },
+  "title_bar": { "show_sign_in": false },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
+  }
+}
