@@ -23,3 +23,5 @@
 	main-view = id:true date:default author:full commit-title:yes,graph,refs,overflow=no
 [include]
 	path = ~/.gitconfig.local
+[merge]
+	conflictStyle = diff3
