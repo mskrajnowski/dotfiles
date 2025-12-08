@@ -6,3 +6,6 @@ size = 9
 
 [keyboard]
 bindings = [{ key = "Return", mods = "Super", action = "SpawnNewInstance" }]
+
+[window]
+padding = { x = 4, y = 2 }
