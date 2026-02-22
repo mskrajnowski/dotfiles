@@ -1,6 +1,8 @@
 [tools]
 "aqua:codeberg.org/mergiraf/mergiraf" = "latest"
 difftastic = "latest"
+go = "latest"
+"go:github.com/laurent22/massren" = "latest"
 jj = "latest"
 starship = "latest"
 usage = "latest"
