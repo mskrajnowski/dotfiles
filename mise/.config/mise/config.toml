@@ -1,6 +1,6 @@
 [tools]
-"aqua:codeberg.org/mergiraf/mergiraf" = "latest"
 difftastic = "latest"
+"forgejo:mergiraf/mergiraf" = "latest"
 go = "latest"
 "go:github.com/laurent22/massren" = "latest"
 jj = "latest"
