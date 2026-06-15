@@ -15,6 +15,11 @@ if status is-interactive
     export SSH_AUTH_SOCK=$HOME/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
   end
 
+  if test "$DESKTOP_SESSION" = plasma && command -q ksshaskpass
+    set -gx SSH_ASKPASS ksshaskpass
+    set -gx SSH_ASKPASS_REQUIRE prefer
+  end
+
   function random-string
     set size 32
 
