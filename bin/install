@@ -13,6 +13,7 @@ mkdir -p \
   "$HOME/.config/fish" \
   "$HOME/.config/mise" \
   "$HOME/.config/alacritty/themes" \
+  "$HOME/.config/ghostty/themes" \
   "$HOME/.config/jj/conf.d" \
   "$HOME/.config/zed"
 
@@ -22,6 +23,7 @@ stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   zsh \
   fish \
   alacritty \
+  ghostty \
   aider \
   mise \
   starship \
