@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=./spec.schema.json
+# https://docs.docker.com/ai/sandboxes/customize/kits/
+# https://docs.docker.com/ai/sandboxes/customize/kit-reference/
+schemaVersion: "1"
+kind: sandbox
+name: kit
+displayName: Kit
+description: My custom kit
+
+sandbox:
+  image: "docker/sandbox-templates:shell-docker"
+  aiFilename: AGENTS.md
+  entrypoint:
+    run:
+      - mise
+      - x
+      - opencode
+      - github:DeusData/codebase-memory-mcp
+      - --
+      - opencode
+
+environment:
+  variables:
+    OPENCODE_ENABLE_EXA: "1"
+    OPENCODE_EXPERIMENTAL_LSP_TOOL: "true"
+
+network:
+  serviceDomains:
+    opencode.ai: opencode
+    context7.com: context7
+  serviceAuth:
+    opencode:
+      headerName: Authorization
+      valueFormat: Bearer %s
+    context7:
+      headerName: Authorization
+      valueFormat: Bearer %s
+
+commands:
+  install:
+    - description: install system dependencies
+      command: apt-get update && apt-get install libatomic1 tree
+
+    - description: install mise
+      command: curl https://mise.run | MISE_INSTALL_PATH=/usr/local/bin/mise sh
+
+    - description: install opencode
+      command: mise install opencode github:DeusData/codebase-memory-mcp
+      user: "1000"

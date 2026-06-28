@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+set -euo pipefail
+
+sbx policy set-default allow-all
+
+# deny direct access to host
+sbx policy deny network localhost
+
+# deny private networks, so the agent can't browse the local networks
+# https://en.wikipedia.org/wiki/List_of_reserved_IP_addresses
+sbx policy deny network 10.0.0.0/8
+sbx policy deny network 100.64.0.0/10
+sbx policy deny network 169.254.0.0/16
+sbx policy deny network 172.16.0.0/12
+sbx policy deny network 192.0.0.0/24
+sbx policy deny network 192.168.0.0/16
+sbx policy deny network 198.18.0.0/15
+
+sbx policy ls

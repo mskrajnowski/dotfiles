@@ -1,0 +1,275 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Kit Specification",
+  "description": "JSON schema for a docker/sbx kit spec.yaml",
+  "type": "object",
+  "required": ["schemaVersion", "kind", "name"],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1",
+      "description": "Spec schema version. Set to '1'."
+    },
+    "kind": {
+      "type": "string",
+      "enum": ["mixin", "sandbox"],
+      "description": "'mixin' for kits that extend an agent; 'sandbox' for kits that define one."
+    },
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique identifier. Lowercase, alphanumeric, hyphens."
+    },
+    "displayName": {
+      "type": "string",
+      "description": "Human-readable name."
+    },
+    "description": {
+      "type": "string",
+      "description": "Short description."
+    },
+    "agentContext": {
+      "type": "string",
+      "description": "Markdown appended to the agent's memory file at sandbox creation."
+    },
+    "credentials": {
+      "type": "object",
+      "properties": {
+        "sources": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "env": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Environment variables to read on the host, in priority order."
+              },
+              "file": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string",
+                    "description": "Path on host. ~ expands to home directory."
+                  },
+                  "parser": {
+                    "type": "string",
+                    "pattern": "^(json:[a-zA-Z0-9_.-]+)?$",
+                    "description": "How to extract the credential value from the file."
+                  }
+                },
+                "required": ["path"]
+              },
+              "priority": {
+                "type": "string",
+                "enum": ["env-first", "file-first"],
+                "default": "env-first"
+              }
+            }
+          }
+        }
+      }
+    },
+    "network": {
+      "type": "object",
+      "properties": {
+        "allowedDomains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Domains the sandbox can reach. Wildcards supported."
+        },
+        "deniedDomains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Domains the sandbox is blocked from reaching."
+        },
+        "serviceDomains": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of domain to service identifier."
+        },
+        "serviceAuth": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "headerName": {
+                "type": "string",
+                "description": "HTTP header the proxy sets."
+              },
+              "valueFormat": {
+                "type": "string",
+                "description": "Format string for the header value."
+              }
+            },
+            "required": ["headerName", "valueFormat"]
+          }
+        }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "properties": {
+        "variables": {
+          "type": "object",
+          "patternProperties": {
+            "^[A-Za-z_][A-Za-z0-9_]*$": {
+              "type": ["string", "number", "boolean"]
+            }
+          },
+          "additionalProperties": false,
+          "description": "Key-value pairs set directly in the container."
+        },
+        "proxyManaged": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+          },
+          "description": "Environment variable names populated by the proxy at request time."
+        }
+      }
+    },
+    "commands": {
+      "type": "object",
+      "properties": {
+        "install": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "command": {
+                "type": "string",
+                "description": "Shell command string."
+              },
+              "user": {
+                "type": "string",
+                "default": "0",
+                "description": "User to run as. '0' = root."
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": ["command"]
+          }
+        },
+        "startup": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "command": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Command and args as a string array."
+              },
+              "user": {
+                "type": "string",
+                "default": "1000",
+                "description": "User to run as. '1000' = agent."
+              },
+              "background": {
+                "type": "boolean",
+                "default": false,
+                "description": "Run in background."
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": ["command"]
+          }
+        },
+        "initFiles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Absolute container path."
+              },
+              "content": {
+                "type": "string",
+                "description": "File content."
+              },
+              "mode": {
+                "type": "string",
+                "default": "0644",
+                "description": "File permissions in octal."
+              },
+              "onlyIfMissing": {
+                "type": "boolean",
+                "default": false,
+                "description": "Skip if the file already exists."
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": ["path", "content"]
+          }
+        }
+      }
+    },
+    "sandbox": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "string",
+          "description": "Docker image reference."
+        },
+        "aiFilename": {
+          "type": "string",
+          "description": "Memory filename."
+        },
+        "entrypoint": {
+          "type": "object",
+          "properties": {
+            "run": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Command and args to replace entrypoint."
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Args appended to existing entrypoint."
+            }
+          }
+        }
+      },
+      "required": ["image"]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "sandbox"
+          }
+        }
+      },
+      "then": {
+        "required": ["sandbox"]
+      }
+    }
+  ],
+  "additionalProperties": false
+}

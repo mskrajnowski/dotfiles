@@ -7,6 +7,7 @@ dotfiles_dir="$(dirname "$0")/.."
 # prevent stow from folding directories,
 # which it shouldn't own
 mkdir -p \
+  "$HOME/.local/bin" \
   "$HOME/.local/share/applications" \
   "$HOME/.config" \
   "$HOME/.config/git" \
@@ -28,4 +29,5 @@ stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   mise \
   starship \
   jujutsu \
-  zed
+  zed \
+  sbx
