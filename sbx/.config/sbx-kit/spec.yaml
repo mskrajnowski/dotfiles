@@ -11,13 +11,7 @@ sandbox:
   image: "docker/sandbox-templates:shell-docker"
   aiFilename: AGENTS.md
   entrypoint:
-    run:
-      - mise
-      - x
-      - opencode
-      - github:DeusData/codebase-memory-mcp
-      - --
-      - opencode
+    run: [opencode]
 
 environment:
   variables:
@@ -27,12 +21,8 @@ environment:
 network:
   serviceDomains:
     opencode.ai: opencode
-    context7.com: context7
   serviceAuth:
     opencode:
-      headerName: Authorization
-      valueFormat: Bearer %s
-    context7:
       headerName: Authorization
       valueFormat: Bearer %s
 
@@ -45,5 +35,12 @@ commands:
       command: curl https://mise.run | MISE_INSTALL_PATH=/usr/local/bin/mise sh
 
     - description: install opencode
-      command: mise install opencode github:DeusData/codebase-memory-mcp
-      user: "1000"
+      command: |
+        cat >/usr/local/bin/opencode <<EOF
+        #!/usr/bin/env bash
+        exec mise exec \
+          opencode \
+          github:DeusData/codebase-memory-mcp \
+          -- opencode "$@"
+        EOF
+        chmod +x /usr/local/bin/opencode
