@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+exec sbx create kit --clone --kit ~/.config/sbx-kit "$@"
