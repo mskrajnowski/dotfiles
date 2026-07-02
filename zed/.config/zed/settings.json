@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "cli_default_open_behavior": "new_window",
   "auto_install_extensions": {
     "solarized": true
   },
@@ -16,31 +17,34 @@
   "git": {
     "inline_blame": {
       "enabled": false,
-      "show_commit_summary": true
-    }
+      "show_commit_summary": true,
+    },
   },
   "git_panel": {
-    "sort_by_path": true
+    "dock": "left",
+    "sort_by": "path",
   },
-  "inlay_hints": { "enabled": true },
+  "inlay_hints": { "enabled": false },
   "middle_click_paste": false,
   "preferred_line_length": 80,
   "project_panel": {
-    "entry_spacing": "standard"
+    "dock": "left",
+    "entry_spacing": "standard",
   },
   "rounded_selection": false,
   "show_whitespaces": "all",
   "tabs": {
     "show_close_button": "hidden",
     "file_icons": true,
-    "git_status": true
+    "git_status": true,
   },
   "theme": {
     "mode": "system",
     "light": "Solarized Light",
-    "dark": "One Dark"
+    "dark": "One Dark",
   },
   "wrap_guides": [70, 80],
+  "window_decorations": "server",
 
   // hide unused features
   "collaboration_panel": { "button": false },
