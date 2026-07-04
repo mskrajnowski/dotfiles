@@ -18,6 +18,7 @@
     "summary": { "model": "opencode-go/deepseek-v4-flash" },
     "compaction": { "model": "opencode-go/deepseek-v4-flash" }
   },
+  "lsp": true,
   "mcp": {
     "codebase-memory-mcp": {
       "type": "local",
