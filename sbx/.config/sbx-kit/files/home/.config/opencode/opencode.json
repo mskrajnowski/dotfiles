@@ -4,6 +4,20 @@
   "small_model": "opencode-go/deepseek-v4-flash",
   "default_agent": "plan",
   "permission": "allow",
+  "agent": {
+    // use big model for architectural decisions
+    "plan": { "model": "opencode-go/glm-5.2" },
+    "general": { "model": "opencode-go/glm-5.2" },
+
+    // use small model for implementation and code search
+    "build": { "model": "opencode-go/deepseek-v4-flash" },
+    "explore": { "model": "opencode-go/deepseek-v4-flash" },
+
+    // use small model for opencode maintenance tasks
+    "title": { "model": "opencode-go/deepseek-v4-flash" },
+    "summary": { "model": "opencode-go/deepseek-v4-flash" },
+    "compaction": { "model": "opencode-go/deepseek-v4-flash" }
+  },
   "mcp": {
     "codebase-memory-mcp": {
       "type": "local",
