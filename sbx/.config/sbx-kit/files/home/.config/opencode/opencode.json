@@ -18,7 +18,12 @@
     "summary": { "model": "opencode-go/deepseek-v4-flash" },
     "compaction": { "model": "opencode-go/deepseek-v4-flash" }
   },
-  "lsp": true,
+  "lsp": {
+    "pyrefly": {
+      "extensions": [".py", ".pyi"],
+      "command": ["pyrefly", "lsp"]
+    }
+  },
   "mcp": {
     "codebase-memory-mcp": {
       "type": "local",
