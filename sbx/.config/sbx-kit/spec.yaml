@@ -30,6 +30,10 @@ commands:
       command: |
         cat >/usr/local/bin/opencode <<EOF
         #!/usr/bin/env bash
+
+        # remove sbx AGENTS.md
+        rm -f "$WORKSPACE_DIR/../AGENTS.md"
+
         exec mise exec \
           opencode \
           -- opencode "$@"
