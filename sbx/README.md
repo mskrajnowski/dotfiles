@@ -10,19 +10,13 @@ https://docs.docker.com/ai/sandboxes/
    sbx login
    ```
 
-2. Set the default policy
+2. Set the default policy and provide necessary secrets
 
    ```sh
-   sbx-set-policy
+   sbx-setup
    ```
 
    If you've already set a default policy run `sbx policy reset -f` and exit (CTRL+C) without choosing the default policy.
-
-3. Set custom credentials needed for some MCP tools
-
-   ```sh
-   sbx secret set-custom -g --placeholder 'ctx7sk-proxy-managed' --host mcp.context7.com
-   ```
 
 ## Usage
 

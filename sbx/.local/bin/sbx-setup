@@ -1,0 +1,39 @@
+#!/usr/bin/bash
+set -euo pipefail
+
+echo "Setting default policy to allow all"
+if ! sbx policy init allow-all; then
+  sbx policy reset --force
+  sbx policy init allow-all
+fi
+
+echo "Deny host access"
+sbx policy deny network localhost
+
+# https://en.wikipedia.org/wiki/List_of_reserved_IP_addresses
+echo "Deny local network access"
+sbx policy deny network 10.0.0.0/8
+sbx policy deny network 100.64.0.0/10
+sbx policy deny network 169.254.0.0/16
+sbx policy deny network 172.16.0.0/12
+sbx policy deny network 192.0.0.0/24
+sbx policy deny network 192.168.0.0/16
+sbx policy deny network 198.18.0.0/15
+
+echo "Policies set"
+sbx policy ls
+
+echo "Creating secrets"
+
+if sbx secret ls --host opencode.ai | grep -qF 'No custom secrets found.'; then
+  echo "OpenCode API key https://opencode.ai/auth -> API keys"
+  sbx secret set-custom -g --placeholder 'sk-opencode' --host opencode.ai
+fi
+
+if sbx secret ls --host context7.com | grep -qF 'No custom secrets found.'; then
+  echo "Context7 API key https://context7.com/dashboard"
+  sbx secret set-custom -g --placeholder 'ctx7sk' --host context7.com --env CONTEXT7_API_KEY
+fi
+
+echo "Secrets set"
+sbx secret ls

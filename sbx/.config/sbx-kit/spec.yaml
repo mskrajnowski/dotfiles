@@ -18,14 +18,6 @@ environment:
     OPENCODE_ENABLE_EXA: "1"
     OPENCODE_EXPERIMENTAL_LSP_TOOL: "true"
 
-network:
-  serviceDomains:
-    opencode.ai: opencode
-  serviceAuth:
-    opencode:
-      headerName: Authorization
-      valueFormat: Bearer %s
-
 commands:
   install:
     - description: install system dependencies

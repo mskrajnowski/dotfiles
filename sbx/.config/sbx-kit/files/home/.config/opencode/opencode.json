@@ -29,8 +29,7 @@
       "type": "remote",
       "url": "https://mcp.context7.com/mcp",
       "headers": {
-        // sbx secret set-custom -g --placeholder 'ctx7sk-proxy-managed' --host mcp.context7.com
-        "CONTEXT7_API_KEY": "ctx7sk-proxy-managed"
+        "CONTEXT7_API_KEY": "ctx7sk"
       },
       "enabled": true
     }
