@@ -55,4 +55,3 @@ Whenever you start working on something create a branch dedicated to that work. 
 - websearch - web search powered by [Exa](https://exa.ai/docs/reference/exa-mcp), use to research general topics or for documentation if it is missing from `context7`
 - webfetch - fetch a particular URL, use to read web pages if you cannot find the information through other tools
 - [lsp](https://opencode.ai/docs/lsp/) - language servers that can help with working on code, e.g. find references, spot issues, format code
-- [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) - indexes the codebase and provides tools to quickly find code, find references, etc., prefer over grepping manually

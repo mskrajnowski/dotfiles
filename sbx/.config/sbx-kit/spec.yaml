@@ -40,7 +40,6 @@ commands:
         #!/usr/bin/env bash
         exec mise exec \
           opencode \
-          github:DeusData/codebase-memory-mcp \
           -- opencode "$@"
         EOF
         chmod +x /usr/local/bin/opencode
