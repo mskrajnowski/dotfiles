@@ -30,6 +30,11 @@ if sbx secret ls --host opencode.ai | grep -qF 'No custom secrets found.'; then
   sbx secret set-custom -g --placeholder 'sk-opencode' --host opencode.ai
 fi
 
+if sbx secret ls --host openrouter.ai | grep -qF 'No custom secrets found.'; then
+  echo "OpenRouter API key https://openrouter.ai/workspaces/default/keys"
+  sbx secret set-custom -g --placeholder 'sk-openrouter' --host openrouter.ai
+fi
+
 if sbx secret ls --host context7.com | grep -qF 'No custom secrets found.'; then
   echo "Context7 API key https://context7.com/dashboard"
   sbx secret set-custom -g --placeholder 'ctx7sk' --host context7.com --env CONTEXT7_API_KEY
