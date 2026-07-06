@@ -39,3 +39,18 @@ commands:
           -- opencode "$@"
         EOF
         chmod +x /usr/local/bin/opencode
+
+    - description: install pi
+      command: |
+        cat >/usr/local/bin/pi <<EOF
+        #!/usr/bin/env bash
+
+        # remove sbx AGENTS.md
+        rm -f "$WORKSPACE_DIR/../AGENTS.md"
+
+        exec mise exec \
+          'npm:@earendil-works/pi-coding-agent' \
+          fd \
+          -- pi "$@"
+        EOF
+        chmod +x /usr/local/bin/pi
