@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+# Sets up gamescope to use the primary output with:
+# - the right resolution
+# - framerate limit set to the output refresh rate
+# - HDR enabled if available
+# - VRR enabled if available
+#
+# Steam usage examples:
+#   autogamescope -- %command%
+#   autogamescope --mangoapp -- %command%
+
+set -euo pipefail
+
+if ! command -v gamescope >/dev/null; then
+  echo "gamescope not installed"
+  exit 1
+fi
+
+if ! command -v kscreen-doctor >/dev/null; then
+  echo "kscreen-doctor is required to get primary output information"
+  exit 1
+fi
+
+if ! command -v jq >/dev/null; then
+  echo "jq is required to parse kscreen-doctor output"
+  exit 1
+fi
+
+output_options=$(kscreen-doctor --json | jq -r '
+  .outputs
+  | sort_by(.priority)[0]
+  | . as $output
+  | (.modes | map(select(.id == $output.currentModeId)) | .[0]) as $mode
+  | [
+      "--prefer-output \(.name)",
+      "--output-width \(.size.width)",
+      "--output-height \(.size.height)",
+      "--framerate-limit \($mode.refreshRate | round)",
+      if .hdr then "--hdr-enabled" else null end,
+      if .vrrPolicy != null and .vrrPolicy != 0 then "--adaptive-sync" else null end
+    ]
+  | map(select(. != null))
+  | join(" ")
+')
+
+exec gamescope --fullscreen --force-grab-cursor $output_options "$@"

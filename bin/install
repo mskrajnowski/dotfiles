@@ -16,7 +16,7 @@ mkdir -p \
   "$HOME/.config/alacritty/themes" \
   "$HOME/.config/ghostty/themes" \
   "$HOME/.config/jj/conf.d" \
-  "$HOME/.config/zed"
+  "$HOME/.config/zed" \
 
 stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   codestyle \
@@ -30,4 +30,5 @@ stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   starship \
   jujutsu \
   zed \
-  sbx
+  sbx \
+  kde
