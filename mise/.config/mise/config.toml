@@ -1,7 +1,10 @@
+[tool_alias]
+sbx = "github:docker/sbx-releases"
+
 [tools]
 difftastic = "latest"
 "forgejo:mergiraf/mergiraf" = "latest"
-"github:docker/sbx-releases" = { version = "latest", asset_pattern = "DockerSandboxes-linux.tar.gz" }
+sbx = { version = "latest", asset_pattern = "DockerSandboxes-linux.tar.gz", rename_exe = "_sbx" }
 go = "latest"
 "go:github.com/laurent22/massren" = "latest"
 jj = "latest"
