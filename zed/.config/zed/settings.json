@@ -70,7 +70,7 @@
     // use pyrefly from a local .venv
     "pyrefly": {
       "binary": {
-        "path": ".venv/bin/pyrefly",
+        "path": "pyrefly",
         "arguments": ["lsp"],
       },
       "settings": {
