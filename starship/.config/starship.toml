@@ -1,4 +1,5 @@
 format = """
+${env_var.SANDBOX_VM_ID}\
 $username\
 $hostname\
 $localip\
@@ -45,3 +46,8 @@ symbol = "🧊 "
 
 [typst]
 symbol = "t "
+
+[env_var.SANDBOX_VM_ID]
+symbol = "📦"
+format = "$symbol[$env_value]($style) "
+style = "blue bold"

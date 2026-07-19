@@ -1,0 +1,46 @@
+#!/usr/bin/bash
+# Create agent home and sandbox
+# Usage:
+#   agent-create NAME
+
+set -euo pipefail
+
+name=$1
+home="/home/agents/$name"
+shift 1
+
+echo "creating agent $name with HOME=$home"
+
+# figure out where dotfiles repo is
+script_path=$(readlink -f "${BASH_SOURCE[0]}")
+bin_dir=$(dirname "$script_path")
+dotfiles_dir=$(realpath "$bin_dir/../../..")
+
+if ! [ -d /home/agents ]; then
+  echo "creating /home/agents"
+  sudo mkdir -p /home/agents
+  sudo chown $(id -u):$(id -g) /home/agents
+fi
+
+if ! [ -d "$home" ]; then
+  echo "creating $home"
+  mkdir -p "$home"
+fi
+
+if ! [ -d "$home/dotfiles" ]; then
+  echo "cloning dotfiles into $home/dotfiles"
+  git clone "$dotfiles_dir" "$home/dotfiles"
+
+  # cd "$home/dotfiles"
+  # git remote rm origin
+  # cd - >/dev/null
+fi
+
+echo "creating sandbox $name"
+sbx create fish --no-share-skills --kit "$dotfiles_dir/agent/sbx/kit" --name "$name" "$home"
+
+echo "setting up sandbox"
+sbx exec -it "$name" "$home/dotfiles/agent/sbx/setup.sh"
+
+echo "agent sandbox ready, enter with:"
+echo "  sbx run --name $name"

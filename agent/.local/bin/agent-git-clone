@@ -1,0 +1,30 @@
+#!/usr/bin/bash
+# Clone a local git repo to the agent's home directory
+#
+# Usage:
+#   agent-git-clone AGENT [SRC [DST]]
+#
+# AGENT - agent name
+# SRC   - path to the repo, defaults to current working directory
+# DST   - path in agent's home to clone to, defaults to SRC dirname.
+
+set -euo pipefail
+
+name=$1
+home="/home/agents/$name"
+
+src_repo=${2:-.}
+src_name=$(basename "$(realpath "$src_repo")")
+dst_repo=${3:-"$src_name"}
+
+echo "cloning $src_repo to $home/$dst_repo"
+git clone "$src_repo" "$home/$dst_repo"
+
+# cd "$home/$dst_repo"
+# git remote rm origin
+# cd - >/dev/null
+
+cd "$src_repo"
+git remote rm "agent-$name" >/dev/null || true
+git remote add "agent-$name" "$home/$dst_repo"
+cd - >/dev/null

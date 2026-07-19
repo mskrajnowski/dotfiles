@@ -1,0 +1,12 @@
+[tools]
+difftastic = "latest"
+"forgejo:mergiraf/mergiraf" = "latest"
+starship = "latest"
+usage = "latest"
+opencode = "latest"
+"npm:@earendil-works/pi-coding-agent" = "latest"
+fd = "latest"
+
+[env]
+OPENCODE_ENABLE_EXA = "1"
+OPENCODE_EXPERIMENTAL_LSP_TOOL = "true"

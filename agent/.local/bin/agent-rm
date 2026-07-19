@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+# Removes agent home and sandbox
+# Usage:
+#   agent-rm NAME
+
+set -euo pipefail
+
+name=$1
+home="/home/agents/$name"
+
+echo "removing agent $name and HOME=$home"
+
+sbx rm -f "$name"
+rm -rf "$home"

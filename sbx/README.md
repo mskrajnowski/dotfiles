@@ -17,11 +17,3 @@ https://docs.docker.com/ai/sandboxes/
    ```
 
    If you've already set a default policy run `sbx policy reset -f` and exit (CTRL+C) without choosing the default policy.
-
-## Usage
-
-To start an agent inside the current working directory
-
-```sh
-sbx-run .
-```
