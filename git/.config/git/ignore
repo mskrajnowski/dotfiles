@@ -14,6 +14,7 @@
 
 # local mise config
 mise.local.toml
+mise.local.lock
 
 # local docker compose overrides
 docker-compose.override.yaml
