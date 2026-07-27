@@ -36,3 +36,14 @@ mise completion fish >~/.config/fish/completions/mise.fish
 
 echo "installing mise tools"
 mise install
+
+echo "installing hermes agent"
+export HERMES_HOME="$PWD/.hermes"
+export HERMES_INSTALL_DIR="$HOME/.hermes/hermes-agent"
+mise set --env local HERMES_HOME="$HERMES_HOME" HERMES_INSTALL_DIR="$HERMES_INSTALL_DIR"
+curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash -s -- \
+  --skip-setup \
+  --skip-browser \
+  --non-interactive
+
+mise set --env local AGENT_HOME="$PWD"
