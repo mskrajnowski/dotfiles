@@ -2,10 +2,8 @@
 set -euo pipefail
 
 echo "Setting default policy to allow all"
-if ! sbx policy init allow-all; then
-  sbx policy reset --force
-  sbx policy init allow-all
-fi
+echo | sbx policy reset --force
+sbx policy init allow-all
 
 echo "Deny host access"
 sbx policy deny network localhost
