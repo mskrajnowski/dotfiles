@@ -4,7 +4,7 @@ sbx = "github:docker/sbx-releases"
 [tools]
 difftastic = "latest"
 "forgejo:mergiraf/mergiraf" = "latest"
-sbx = { version = "latest", asset_pattern = "DockerSandboxes-linux.tar.gz", rename_exe = "_sbx" }
+sbx = { version = "latest", asset_pattern = "DockerSandboxes-linux.tar.gz" }
 go = "latest"
 "go:github.com/laurent22/massren" = "latest"
 jj = "latest"

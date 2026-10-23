@@ -1,6 +1,15 @@
 #!/usr/bin/bash
 set -euo pipefail
 
+echo "Default settings"
+sbx settings set browser.enabled true
+sbx settings set clipboard.imagePaste true
+sbx settings set diagnostics.autoUpload no
+sbx settings set platform.allowExperimentalFeatures true
+sbx settings set skills.defaultMode off
+sbx settings set ssh.agentForwardingEnabled false
+sbx daemon restart
+
 echo "Setting default policy to allow all"
 echo | sbx policy reset --force
 sbx policy init allow-all

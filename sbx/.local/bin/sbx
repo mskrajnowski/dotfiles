@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-SSH_AUTH_SOCK= exec -a sbx _sbx "$@"
