@@ -30,3 +30,6 @@ compose.override.yml
 
 # aider config and temporary files
 .aider.*
+
+# docker sandboxes
+.sbx

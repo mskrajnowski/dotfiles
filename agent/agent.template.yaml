@@ -1,0 +1,11 @@
+# Agent sandbox environment
+# https://docs.docker.com/ai/sandboxes/configuration/environment-files/
+schemaVersion: "1"
+name: ${AGENT_NAME}
+agent: agent-kit
+workspace: /home/agents/${AGENT_NAME}
+
+kits:
+  - source: ${AGENT_KIT_DIR}
+    args:
+      name: ${AGENT_NAME}

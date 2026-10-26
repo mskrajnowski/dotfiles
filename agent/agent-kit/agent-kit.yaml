@@ -1,0 +1,29 @@
+# syntax=docker/sandbox-kit:3
+schemaVersion: "3"
+kind: workload
+
+args:
+  name:
+    default: agent
+    pattern: "^[a-zA-Z0-9_-]+$"
+
+capabilities:
+  - type: com.docker.sandbox/sbx@1
+  - type: com.docker.sandbox/lifecycle@1
+    config:
+      install:
+        - description: Replace /home/agent with a link to /home/agents/${{kit.args.name}}
+          command:
+            - bash
+            - -c
+            - >-
+              [ -L /home/agent ] || {
+              (shopt -s dotglob; mv /home/agent/* /home/agents/${{ kit.args.name }}/)
+              && rm -rf /home/agent
+              && ln -s /home/agents/${{ kit.args.name }} /home/agent;
+              }
+          user: "0"
+
+        - description: Install mise tools
+          command: [mise, install]
+          user: "1000"

@@ -1,13 +1,20 @@
 [tool_alias]
+massren = "go:github.com/laurent22/massren"
+mergiraf = "forgejo:mergiraf/mergiraf"
 sbx = "github:docker/sbx-releases"
 
 [tools]
 difftastic = "latest"
-"forgejo:mergiraf/mergiraf" = "latest"
-sbx = { version = "latest", asset_pattern = "DockerSandboxes-linux.tar.gz" }
+envsubst = "latest"
+fd = "latest"
 go = "latest"
-"go:github.com/laurent22/massren" = "latest"
 jj = "latest"
+jq = "latest"
+massren = "latest"
+mergiraf = "latest"
+ripgrep = "latest"
+sbx = { version = "latest", asset_pattern = "DockerSandboxes-linux.tar.gz" }
 starship = "latest"
 usage = "latest"
 uv = "latest"
+yq = "latest"

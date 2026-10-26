@@ -16,31 +16,26 @@ script_path=$(readlink -f "${BASH_SOURCE[0]}")
 bin_dir=$(dirname "$script_path")
 dotfiles_dir=$(realpath "$bin_dir/../../..")
 
+agent_kit_dir="$dotfiles_dir/agent/agent-kit"
+agent_env_template="$dotfiles_dir/agent/agent.template.yaml"
+agent_env="/home/agents/$name.yaml"
+agent_home="/home/agents/$name"
+
 if ! [ -d /home/agents ]; then
   echo "creating /home/agents"
   sudo mkdir -p /home/agents
   sudo chown $(id -u):$(id -g) /home/agents
 fi
 
-if ! [ -d "$home" ]; then
-  echo "creating $home"
-  mkdir -p "$home"
-fi
+echo "creating $agent_home"
+mkdir -p "$agent_home"
 
-if ! [ -d "$home/dotfiles" ]; then
-  echo "cloning dotfiles into $home/dotfiles"
-  git clone "$dotfiles_dir" "$home/dotfiles"
+echo "creating env spec $agent_env"
+env -i AGENT_NAME="$name" AGENT_KIT_DIR="$agent_kit_dir" \
+  envsubst <"$agent_env_template" >"$agent_env"
 
-  # cd "$home/dotfiles"
-  # git remote rm origin
-  # cd - >/dev/null
-fi
+echo "creating env $agent_env"
+sbx env create "$agent_env"
 
-echo "creating sandbox $name"
-sbx create fish --no-share-skills --kit "$dotfiles_dir/agent/sbx/kit" --name "$name" "$home"
-
-echo "setting up sandbox"
-sbx exec -it "$name" "$home/dotfiles/agent/sbx/setup.sh"
-
-echo "agent sandbox ready, enter with:"
-echo "  sbx run --name $name"
+echo "agent env ready, enter with:"
+echo "  sbx env run '$agent_env'"
