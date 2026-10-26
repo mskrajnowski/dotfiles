@@ -26,6 +26,9 @@ RUN mise completion fish >/etc/fish/completions/mise.fish
 
 # Copy dotfiles
 COPY --chown=1000:1000 files/home/agent/.config/ /home/agent/.config/
+COPY --chown=1000:1000 files/home/agent/.agents/ /home/agent/.agents/
+RUN mkdir -p /home/agent/.pi/agent \
+  && ln -s /home/agent/.agents/AGENTS.md /home/agent/.pi/agent/AGENTS.md
 
 USER agent
 WORKDIR /home/agent
