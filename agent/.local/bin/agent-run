@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+# Run agent, create if it does not exist
+# Usage:
+#   agent-run NAME
+
+set -euo pipefail
+
+name=$1
+shift 1
+
+agent_env=/home/agents/$name.yaml
+
+if ! [ -f "$agent_env" ]; then
+  agent-create "$name"
+fi
+
+exec sbx env run "$agent_env" "$@"

@@ -53,4 +53,4 @@ echo "creating env $agent_env"
 sbx env create "$agent_env"
 
 echo "agent env ready, enter with:"
-echo "  sbx env run '$agent_env'"
+echo "  agent-run $name"
