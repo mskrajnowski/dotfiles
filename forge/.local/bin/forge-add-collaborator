@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo=$1
+username=$2
+token=$(forge-token)
+echo "Adding $username to $repo"
+
+curl -X PUT \
+  -H "Authorization: token $token" \
+  -H "Content-Type: application/json" \
+  -d '{"permission": "write"}' \
+  "http://forge.local/api/v1/repos/$repo/collaborators/$username"

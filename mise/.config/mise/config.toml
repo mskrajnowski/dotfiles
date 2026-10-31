@@ -2,11 +2,13 @@
 massren = "go:github.com/laurent22/massren"
 mergiraf = "forgejo:mergiraf/mergiraf"
 sbx = "github:docker/sbx-releases"
+fj = "forgejo:forgejo-contrib/forgejo-cli"
 
 [tools]
 difftastic = "latest"
 envsubst = "latest"
 fd = "latest"
+fj = "latest"
 go = "latest"
 jj = "latest"
 jq = "latest"

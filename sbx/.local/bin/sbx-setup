@@ -14,38 +14,24 @@ echo "Setting default policy to allow all"
 echo | sbx policy reset --force
 sbx policy init allow-all
 
-echo "Deny host access"
-sbx policy deny network localhost
+echo "Deny IPv6 and 6to4 relay"
+sbx policy deny network ::/0,192.88.99.0/24
 
-# https://en.wikipedia.org/wiki/List_of_reserved_IP_addresses
-echo "Deny local network access"
-sbx policy deny network 10.0.0.0/8
-sbx policy deny network 100.64.0.0/10
-sbx policy deny network 169.254.0.0/16
-sbx policy deny network 172.16.0.0/12
-sbx policy deny network 192.0.0.0/24
-sbx policy deny network 192.168.0.0/16
-sbx policy deny network 198.18.0.0/15
+echo "Deny multicast and broadcast"
+sbx policy deny network 224.0.0.0/4,255.255.255.255
+
+echo "Deny localhost"
+sbx policy deny network localhost,127.0.0.1,0.0.0.0/8
+
+echo "Deny loopback 127.0.0.0/8, except for 127.1.0.0/16"
+echo "127.1.0.0/16 is used to share services with agents, e.g. forge.local"
+sbx policy deny network 127.0.0.0/16,127.2.0.0/15,127.4.0.0/14,127.8.0.0/13,127.16.0.0/12,127.32.0.0/11,127.64.0.0/10,127.128.0.0/9
+
+echo "Deny local networks"
+sbx policy deny network 10.0.0.0/8,100.64.0.0/10,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.168.0.0/16,198.18.0.0/15
+
+echo "Deny reserved class E and TEST-NETs"
+sbx policy deny network 240.0.0.0/4,192.0.2.0/24,198.51.100.0/24,203.0.113.0/24
 
 echo "Policies set"
 sbx policy ls
-
-echo "Creating secrets"
-
-if sbx secret ls --host opencode.ai | grep -qF 'No custom secrets found.'; then
-  echo "OpenCode API key https://opencode.ai/auth -> API keys"
-  sbx secret set-custom -g --placeholder 'sk-opencode' --host opencode.ai
-fi
-
-if sbx secret ls --host openrouter.ai | grep -qF 'No custom secrets found.'; then
-  echo "OpenRouter API key https://openrouter.ai/workspaces/default/keys"
-  sbx secret set-custom -g --placeholder 'sk-openrouter' --host openrouter.ai
-fi
-
-if sbx secret ls --host context7.com | grep -qF 'No custom secrets found.'; then
-  echo "Context7 API key https://context7.com/dashboard"
-  sbx secret set-custom -g --placeholder 'ctx7sk' --host context7.com --env CONTEXT7_API_KEY
-fi
-
-echo "Secrets set"
-sbx secret ls

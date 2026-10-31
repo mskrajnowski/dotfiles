@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+fj_keys_path=~/.local/share/forgejo-cli/keys.json
+if [ -f "$fj_keys_path" ]; then
+  token=$(cat "$fj_keys_path" | jq -r '.hosts["forge.local"].token')
+else
+  token=null
+fi
+
+if [ $token = "null" ]; then
+  token=$(forge-admin user generate-access-token --username mskrajnowski --raw --scopes all --token-name fj)
+  echo -n $token | forge-cli auth add-token >/dev/null
+fi
+
+echo $token

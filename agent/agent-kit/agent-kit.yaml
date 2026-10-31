@@ -24,6 +24,17 @@ capabilities:
               }
           user: "0"
 
+        - description: Clone agent-dotfiles
+          command:
+            - bash
+            - -c
+            - "[ -d ~/agent-dotfiles ] || git clone http://forge.local/mskrajnowski/agent-dotfiles.git ~/agent-dotfiles"
+          user: "1000"
+
+        - description: Install agent-dotfiles
+          command: ["bash", "~/agent-dotfiles/install.sh"]
+          user: "1000"
+
         - description: Install mise tools
           command: [mise, install]
           user: "1000"

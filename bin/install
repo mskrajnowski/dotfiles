@@ -16,7 +16,8 @@ mkdir -p \
   "$HOME/.config/alacritty/themes" \
   "$HOME/.config/ghostty/themes" \
   "$HOME/.config/jj/conf.d" \
-  "$HOME/.config/zed"
+  "$HOME/.config/zed" \
+  "$HOME/.forge"
 
 stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   agent \
@@ -32,4 +33,10 @@ stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   jujutsu \
   zed \
   sbx \
-  kde
+  kde \
+  forge
+
+if ! grep -Fq forge.local /etc/hosts; then
+  echo Adding forge.local to /etc/hosts
+  echo 127.1.0.1 forge.local | sudo tee -a /etc/hosts
+fi

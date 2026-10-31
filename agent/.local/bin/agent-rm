@@ -13,3 +13,4 @@ echo "removing agent $name and HOME=$home"
 
 sbx rm -f "$name"
 rm -rf "$home" "$sbxenv"
+forge-admin user delete --username "$name"

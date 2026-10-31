@@ -30,8 +30,23 @@ fi
 echo "creating $agent_home"
 mkdir -p "$agent_home"
 
+echo "creating forge user"
+forge-admin user create --username $name --email $name@localhost --random-password --must-change-password=false
+forge_token=$(forge-admin user generate-access-token --username $name --raw)
+
+cat >"$agent_home/.netrc" <<EOF
+machine forge.local
+login $name
+password $forge_token
+EOF
+chmod 600 "$agent_home/.netrc"
+
+echo "adding $name to dotfiles and agent-dotfiles repos"
+forge-add-collaborator mskrajnowski/dotfiles $name
+forge-add-collaborator mskrajnowski/agent-dotfiles $name
+
 echo "creating env spec $agent_env"
-env -i AGENT_NAME="$name" AGENT_KIT_DIR="$agent_kit_dir" \
+env -i AGENT_NAME="$name" AGENT_KIT_DIR="$agent_kit_dir" FORGE_TOKEN="$forge_token" \
   envsubst <"$agent_env_template" >"$agent_env"
 
 echo "creating env $agent_env"
