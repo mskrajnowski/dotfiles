@@ -14,3 +14,7 @@ services:
     ports:
       - "127.1.0.1:80:3000"
       - "127.1.0.1:22:22"
+
+volumes:
+  forgejo_data:
+    name: forgejo_data
