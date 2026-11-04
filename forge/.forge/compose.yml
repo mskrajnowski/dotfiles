@@ -5,11 +5,12 @@ services:
     image: codeberg.org/forgejo/forgejo:17
     container_name: forgejo
     environment:
-      - USER_UID=1000
-      - USER_GID=1000
+      USER_UID: 1000
+      USER_GID: 1000
+      FORGEJO__actions__ENABLED: "false"
     restart: unless-stopped
     volumes:
-      - ./data:/data
+      - forgejo_data:/data
       - /etc/localtime:/etc/localtime:ro
     ports:
       - "127.1.0.1:80:3000"
