@@ -1,4 +1,4 @@
-FROM docker/sandbox-templates:shell
+FROM docker/sandbox-templates:shell-docker
 USER root
 
 # Install various useful tools
