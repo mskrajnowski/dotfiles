@@ -29,6 +29,7 @@ fi
 
 output_options=$(kscreen-doctor --json | jq -r '
   .outputs
+  | map(select(.enabled))
   | sort_by(.priority)[0]
   | . as $output
   | (.modes | map(select(.id == $output.currentModeId)) | .[0]) as $mode
