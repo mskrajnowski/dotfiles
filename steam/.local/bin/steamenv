@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Uses mise to configure steam games, e.g. proton flags
+#
+# Steam usage examples:
+#   steamenv %command%
+
+exec mise exec --env steam -- "$@"

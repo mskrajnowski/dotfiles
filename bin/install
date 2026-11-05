@@ -34,7 +34,8 @@ stow --dir "$dotfiles_dir" --target "$HOME" --adopt \
   zed \
   sbx \
   kde \
-  forge
+  forge \
+  steam
 
 if ! grep -Fq forge.local /etc/hosts; then
   echo Adding forge.local to /etc/hosts
