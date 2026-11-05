@@ -45,4 +45,4 @@ output_options=$(kscreen-doctor --json | jq -r '
   | join(" ")
 ')
 
-exec gamescope --fullscreen --force-grab-cursor $output_options "$@"
+exec steamenv gamescope --fullscreen --force-grab-cursor $output_options "$@"
