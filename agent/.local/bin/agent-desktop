@@ -1,0 +1,30 @@
+#!/usr/bin/bash
+# Open an agent sandbox's desktop in the browser via noVNC.
+# Usage: agent-desktop NAME
+set -euo pipefail
+
+name=$1
+
+# The sandbox always serves the desktop on the noVNC default port. Reuse an
+# existing publish binding for it if there is one (agent-desktop may be run
+# repeatedly); drop any duplicate bindings beyond the first, then publish a
+# new one on an ephemeral host port if none exists yet.
+ports_json=$(sbx ports "$name" --json 2>/dev/null || echo '[]')
+port=$(jq -r 'map(select(.sandbox_port == 6080)) | sort_by(.host_port) | .[0].host_port // empty' <<<"$ports_json")
+
+while read -r p; do
+  [[ -n $p ]] || continue
+  sbx ports "$name" --unpublish "$p:6080" >/dev/null 2>&1 || true
+done < <(jq -r 'map(select(.sandbox_port == 6080)) | sort_by(.host_port) | .[1:][]?.host_port' <<<"$ports_json")
+
+if [[ -z $port ]]; then
+  # Host port omitted on purpose: sbx allocates an ephemeral one.
+  sbx ports "$name" --publish 6080 >/dev/null 2>&1
+  port=$(sbx ports "$name" --json 2>/dev/null | jq -r 'map(select(.sandbox_port == 6080)) | sort_by(.host_port) | .[0].host_port // empty')
+fi
+if [[ -z $port ]]; then
+  echo "could not determine the published host port" >&2
+  exit 1
+fi
+
+xdg-open "http://localhost:$port/vnc.html?autoconnect=true&reconnect=true&resize=scale"
