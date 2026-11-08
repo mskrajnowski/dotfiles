@@ -16,6 +16,13 @@ RUN apt-get update \
   fish \
   vim \
   stow \
+  # Headless Wayland desktop (used by the agent-dotfiles 'desktop' skill)
+  sway \
+  wayvnc \
+  grim \
+  xwayland \
+  novnc \
+  websockify \
   && rm -rf /var/lib/apt/lists/*
 
 # set fish as the default shell for agent for ssh
