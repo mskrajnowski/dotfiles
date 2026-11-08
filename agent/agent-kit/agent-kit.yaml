@@ -16,12 +16,7 @@ capabilities:
           command:
             - bash
             - -c
-            - >-
-              [ -L /home/agent ] || {
-              (shopt -s dotglob; mv /home/agent/* /home/agents/${{ kit.args.name }}/)
-              && rm -rf /home/agent
-              && ln -s /home/agents/${{ kit.args.name }} /home/agent;
-              }
+            - rm -rf /home/agent && ln -s /home/agents/${{ kit.args.name }} /home/agent
           user: "0"
 
         - description: Clone agent-dotfiles
