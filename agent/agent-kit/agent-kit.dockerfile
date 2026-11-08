@@ -25,6 +25,19 @@ RUN apt-get update \
   websockify \
   && rm -rf /var/lib/apt/lists/*
 
+# Browsers for the agent-dotfiles 'browser' skill (driven at runtime via
+# Puppeteer); that skill documents usage and constraints.
+ENV PLAYWRIGHT_BROWSERS_PATH=/opt/ms-playwright
+
+# npx needs the image's configured npm global prefix to exist (base-image quirk)
+RUN mkdir -p /usr/local/share/npm-global/lib
+
+RUN npx -y playwright@1.65.0 install --with-deps chromium firefox \
+  && rm -rf /root/.npm /root/.cache \
+  # playwright can exit 0 on a failed download, so verify.
+  && test -x /opt/ms-playwright/chromium-*/chrome-linux64/chrome \
+  && test -x /opt/ms-playwright/firefox-*/firefox/firefox
+
 # set fish as the default shell for agent for ssh
 RUN chsh -s /bin/fish agent
 
